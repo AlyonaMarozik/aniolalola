@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "source": "sadzawka.pl",
+  "imported_at": "2026-10-11",
+  "records": [
+    {
+      "id": "adiantum-venustum",
+      "botanical_name": "Adiantum venustum",
+      "description": "Теневой вечнозелёный папоротник с ажурными листьями; требуется дренированная почва.",
+      "traits": {
+        "hardiness_zone": 3,
+        "leaf_length_cm": 30,
+        "light": "тень",
+        "soil": "дренированная, прохладная",
+        "wind": "защищённое место"
+      },
+      "source_url": "https://sadzawka.pl/Adiantum_venustum",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "adiantum-pedatum-imbricatum",
+      "botanical_name": "Adiantum pedatum 'Imbricatum'",
+      "description": "Компактный адиантум для тенистых мест с влажной, хорошо дренированной почвой.",
+      "traits": {
+        "hardiness_zone": 3,
+        "height_cm": 30,
+        "light": "тень",
+        "soil": "влажная, дренированная, щелочная"
+      },
+      "source_url": "https://sadzawka.pl/Adiantum_pedatum_Imbricatum-Adiantum_stopowate",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "cyrtomium-fortunei-clivicola",
+      "botanical_name": "Cyrtomium fortunei 'Clivicola'",
+      "description": "Вечнозелёный папоротник с кожистыми светло-зелёными листьями, формирует крупные куртины.",
+      "traits": {
+        "evergreen": true
+      },
+      "source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "asplenium-trichomanes",
+      "botanical_name": "Asplenium trichomanes",
+      "description": "Небольшой скальный папоротник.",
+      "traits": {},
+      "source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "arachniodes-aristata-variegata",
+      "botanical_name": "Arachniodes aristata 'Variegata'",
+      "description": "Вечнозелёный папоротник с пёстрой полосой по центру блестящих листьев.",
+      "traits": {
+        "light": "тень",
+        "soil": "влажная, умеренно плодородная",
+        "evergreen": true
+      },
+      "source_url": "https://sadzawka.pl/Arachniodes_aristata_Variegata",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "asplenium-ebenoides",
+      "botanical_name": "Asplenium ebenoides",
+      "description": "Небольшой вечнозелёный папоротник для тенистого каменистого сада.",
+      "traits": {
+        "light": "тень",
+        "soil": "с содержанием кальция",
+        "evergreen": true
+      },
+      "source_url": "https://sadzawka.pl/Asplenium_ebenoides-Zanokcica",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "athyrium-niponicum-apple-court",
+      "botanical_name": "Athyrium niponicum 'Apple Court'",
+      "description": "Японский папоротник с серебристыми листьями и пурпурными черешками.",
+      "traits": {},
+      "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Apple_Court",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "athyrium-niponicum-metallicum",
+      "botanical_name": "Athyrium niponicum 'Metallicum'",
+      "description": "Низкий папоротник с серебристо-серыми листьями и красноватым центром.",
+      "traits": {
+        "light": "тень–полутень",
+        "soil": "влажная, гумусная, слабокислая или нейтральная"
+      },
+      "source_url": "https://sadzawka.pl/Athyrium_niponicum_Metallicum-Wietlica_japonska",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "athyrium-niponicum-red-beauty",
+      "botanical_name": "Athyrium niponicum 'Red Beauty'",
+      "description": "Низкий японский папоротник с серебристой листвой и красным центром.",
+      "traits": {
+        "light": "тень–полутень",
+        "soil": "влажная, гумусная, слабокислая или нейтральная"
+      },
+      "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Red_Beauty-Wietlica_japonska",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "blechnum-penna-marina",
+      "botanical_name": "Blechnum penna-marina",
+      "description": "Низкий папоротник для кислых влажных почв без застоя воды.",
+      "traits": {
+        "light": "тень",
+        "soil": "кислая, влажная, дренированная"
+      },
+      "source_url": "https://sadzawka.pl/Blechnum_penna_marina-podrzen_morski",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "blechnum-spicant",
+      "botanical_name": "Blechnum spicant",
+      "description": "Вечнозелёный папоротник с розеткой листьев.",
+      "traits": {
+        "light": "тень",
+        "soil": "кислая, постоянно влажная"
+      },
+      "source_url": "https://sadzawka.pl/Blechnum_spicant-Podrzen_zebrowiec",
+      "source": "sadzawka.pl",
+      "image": {
+        "url": null,
+        "status": "direct_url_not_extracted"
+      },
+      "data_quality": "partial_source_verified",
+      "growth_3_5_10_years": null
+    }
+  ]
+}
