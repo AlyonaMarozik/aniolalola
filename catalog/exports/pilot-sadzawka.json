@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "source": "sadzawka.pl",
   "imported_at": "2026-10-11",
   "records": [
@@ -13,10 +13,13 @@
         "light": "тень",
         "soil": "дренированная, прохладная",
         "wind": "защищённое место",
-        "drainage": "хороший, без застоя воды",
-        "moisture": "умеренная; переносит кратковременное подсыхание",
+        "drainage": "хороший; не переносит заболачивания",
+        "moisture": "переносит периодическое подсыхание",
         "evergreen": false,
-        "foliage_type": "листопадное"
+        "foliage_type": "вечнозелёное",
+        "family": "Adiantaceae",
+        "origin": "Гималаи",
+        "growth": "медленная акклиматизация, затем плотный покров"
       },
       "source_url": "https://sadzawka.pl/Adiantum_venustum",
       "source": "sadzawka.pl",
@@ -28,7 +31,7 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Adiantum_venustum",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "adiantum-pedatum-imbricatum",
@@ -45,9 +48,7 @@
         "soil_structure": "богатая, лесная",
         "drainage": "водопроницаемая",
         "moisture": "влажная, прохладная",
-        "wind": "защищённое место",
-        "foliage_type": "листопадное",
-        "evergreen": false
+        "wind": "защищённое место"
       },
       "source_url": "https://sadzawka.pl/Adiantum_pedatum_Imbricatum-Adiantum_stopowate",
       "source": "sadzawka.pl",
@@ -66,9 +67,17 @@
       "description": "Вечнозелёный папоротник с кожистыми светло-зелёными листьями, формирует крупные куртины.",
       "traits": {
         "evergreen": true,
-        "habit": "крупная куртина",
+        "habit": "крупные куртины",
         "container_suitable": true,
-        "foliage_type": "вечнозелёное"
+        "foliage_type": "вечнозелёное",
+        "family": "Dryopteridaceae",
+        "origin": "Япония, Китай, Корея",
+        "hardiness_zone": 6,
+        "leaf_length_cm": 70,
+        "leaf_width_cm": 20,
+        "light": "тень",
+        "moisture": "переносит подсыхание",
+        "growth": "быстрее типичного вида (по Sadzawka)"
       },
       "source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna",
       "source": "sadzawka.pl",
@@ -80,7 +89,7 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "asplenium-trichomanes",
@@ -89,14 +98,16 @@
       "traits": {
         "hardiness_zone": 3,
         "leaf_length_cm": 20,
-        "light": "солнце–тень",
-        "calcium": "да, по данным Sadzawka; зависит от подвида",
+        "light": "солнце–полутень–тень",
+        "calcium": "да (указано питомником)",
         "soil_structure": "скальные щели, каменистый субстрат",
-        "drainage": "очень хороший",
+        "drainage": "хороший",
         "moisture": "переносит засуху",
         "evergreen": true,
-        "habitat": "известковые стенки и скальные щели",
-        "foliage_type": "вечнозелёное"
+        "habitat": "известковые стены и скальные щели",
+        "foliage_type": "вечнозелёное",
+        "family": "Aspleniaceae",
+        "origin": "Северное полушарие"
       },
       "source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
       "source": "sadzawka.pl",
@@ -107,17 +118,24 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "arachniodes-aristata-variegata",
       "botanical_name": "Arachniodes aristata 'Variegata'",
       "description": "Вечнозелёный папоротник с пёстрой полосой по центру блестящих листьев.",
       "traits": {
-        "light": "тень",
+        "light": "полутень–тень",
         "soil": "влажная, умеренно плодородная",
         "evergreen": true,
-        "foliage_type": "вечнозелёное"
+        "foliage_type": "вечнозелёное",
+        "family": "Dryopteridaceae",
+        "origin": "восточная часть Индийского полуострова",
+        "hardiness_zone": "7–9",
+        "height_cm": 40,
+        "soil_structure": "гумусная, умеренно плодородная",
+        "moisture": "влажная",
+        "winter_warning": "Не полностью морозостойка в Польше; питомник рекомендует контейнер с зимовкой в помещении или защищённое прохладное место"
       },
       "source_url": "https://sadzawka.pl/Arachniodes_aristata_Variegata",
       "source": "sadzawka.pl",
@@ -128,7 +146,7 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Arachniodes_aristata_Variegata",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "asplenium-ebenoides",
@@ -140,10 +158,12 @@
         "evergreen": true,
         "hardiness_zone": 5,
         "leaf_length_cm": 20,
-        "calcium": "предпочитает",
+        "calcium": "да",
         "soil_structure": "каменистый, с содержанием известняка",
-        "habitat": "тенистый рокарий, известковые скалы",
-        "foliage_type": "вечнозелёное"
+        "habitat": "затенённый известковый рокарий",
+        "foliage_type": "вечнозелёное",
+        "family": "Aspleniaceae",
+        "origin": "Северная Америка, восточная часть"
       },
       "source_url": "https://sadzawka.pl/Asplenium_ebenoides-Zanokcica",
       "source": "sadzawka.pl",
@@ -154,16 +174,13 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Asplenium_ebenoides-Zanokcica",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "athyrium-niponicum-apple-court",
       "botanical_name": "Athyrium niponicum 'Apple Court'",
       "description": "Японский папоротник с серебристыми листьями и пурпурными черешками.",
-      "traits": {
-        "foliage_type": "листопадное",
-        "evergreen": false
-      },
+      "traits": {},
       "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Apple_Court",
       "source": "sadzawka.pl",
       "image": {
@@ -182,11 +199,14 @@
       "traits": {
         "light": "полутень–тень",
         "soil": "влажная, гумусная, слабокислая или нейтральная",
-        "soil_ph": "слабокислая–нейтральная",
+        "soil_ph": "нейтральная–слабокислая",
         "soil_structure": "гумусная",
         "moisture": "влажная",
-        "foliage_type": "листопадное",
-        "evergreen": false
+        "family": "Woodsiaceae (по источнику)",
+        "origin": "Азия, культивар",
+        "hardiness_zone": 6,
+        "leaf_length_cm": "40–70",
+        "leaf_width_cm": "10–20"
       },
       "source_url": "https://sadzawka.pl/Athyrium_niponicum_Metallicum-Wietlica_japonska",
       "source": "sadzawka.pl",
@@ -197,7 +217,7 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Athyrium_niponicum_Metallicum-Wietlica_japonska",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "athyrium-niponicum-red-beauty",
@@ -206,11 +226,14 @@
       "traits": {
         "light": "полутень–тень",
         "soil": "влажная, гумусная, слабокислая или нейтральная",
-        "soil_ph": "слабокислая–нейтральная",
+        "soil_ph": "нейтральная–слабокислая",
         "soil_structure": "гумусная",
         "moisture": "влажная",
-        "foliage_type": "листопадное",
-        "evergreen": false
+        "family": "Woodsiaceae (по источнику)",
+        "origin": "Азия, культивар",
+        "hardiness_zone": 6,
+        "leaf_length_cm": "40–70",
+        "leaf_width_cm": "10–20"
       },
       "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Red_Beauty-Wietlica_japonska",
       "source": "sadzawka.pl",
@@ -221,7 +244,7 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Athyrium_nipponicum_Red_Beauty-Wietlica_japonska",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "blechnum-penna-marina",
@@ -231,11 +254,16 @@
         "light": "тень",
         "soil": "кислая, влажная, дренированная",
         "soil_ph": "кислая",
-        "moisture": "влажная",
-        "drainage": "хороший, особенно зимой; застой воды недопустим",
+        "moisture": "постоянно влажная",
+        "drainage": "обязателен, особенно зимой",
         "habitat": "влажные склоны, приподнятые берега водоёмов",
         "foliage_type": "вечнозелёное",
-        "evergreen": true
+        "evergreen": true,
+        "family": "Blechnaceae",
+        "origin": "Южная Америка",
+        "hardiness_zone": 5,
+        "leaf_length_cm": 15,
+        "calcium": "нет"
       },
       "source_url": "https://sadzawka.pl/Blechnum_penna_marina-podrzen_morski",
       "source": "sadzawka.pl",
@@ -246,7 +274,7 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Blechnum_penna_marina-podrzen_morski",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "blechnum-spicant",
@@ -259,7 +287,12 @@
         "soil_structure": "бедная",
         "moisture": "постоянно влажная",
         "evergreen": true,
-        "foliage_type": "вечнозелёное"
+        "foliage_type": "вечнозелёное",
+        "family": "Blechnaceae",
+        "origin": "в том числе Польша",
+        "hardiness_zone": 3,
+        "leaf_length_cm": 50,
+        "calcium": "нет"
       },
       "source_url": "https://sadzawka.pl/Blechnum_spicant-Podrzen_zebrowiec",
       "source": "sadzawka.pl",
@@ -270,8 +303,9 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Blechnum_spicant-Podrzen_zebrowiec",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     }
   ],
-  "data_policy": "No estimated or inferred botanical trait values. Missing verified values remain null; growth projections only from sourced mature dimensions."
+  "data_policy": "No estimated or inferred botanical trait values. Missing verified values remain null; growth projections only from sourced mature dimensions.",
+  "last_reviewed": "2026-10-11"
 }
