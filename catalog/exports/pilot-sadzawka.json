@@ -44,11 +44,15 @@
         "soil": "влажная, дренированная, щелочная",
         "leaf_length_cm": "15–30",
         "soil_ph": "щелочная",
-        "calcium": "предпочитает",
+        "calcium": "да",
         "soil_structure": "богатая, лесная",
         "drainage": "водопроницаемая",
         "moisture": "влажная, прохладная",
-        "wind": "защищённое место"
+        "wind": "защищённое место",
+        "family": "Adiantaceae",
+        "origin": "Северная Америка, включая Аляску",
+        "propagation": "споры, деление куртины в безлистный период",
+        "winter_care": "Мульчировать для защиты молодых весенних вай от заморозков"
       },
       "source_url": "https://sadzawka.pl/Adiantum_pedatum_Imbricatum-Adiantum_stopowate",
       "source": "sadzawka.pl",
@@ -59,7 +63,7 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Adiantum_pedatum_Imbricatum-Adiantum_stopowate",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "cyrtomium-fortunei-clivicola",
@@ -179,8 +183,15 @@
     {
       "id": "athyrium-niponicum-apple-court",
       "botanical_name": "Athyrium niponicum 'Apple Court'",
-      "description": "Японский папоротник с серебристыми листьями и пурпурными черешками.",
-      "traits": {},
+      "description": "Японский папоротник с серебристой листовой пластинкой, пурпурными черешками и сильно рассечёнными окончаниями листьев (cristata). Сорт отобран в питомнике Apple Court.",
+      "traits": {
+        "family": "Woodsiaceae (по Sadzawka)",
+        "origin": "культивар",
+        "hardiness_zone": 6,
+        "light": "полутень–тень",
+        "moisture": "влажная",
+        "size_note": "На странице Sadzawka числовой размер не указан; оставлен пустым."
+      },
       "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Apple_Court",
       "source": "sadzawka.pl",
       "image": {
@@ -190,7 +201,7 @@
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Athyrium_nipponicum_Apple_Court",
-      "trait_quality": "source_specific_partial"
+      "trait_quality": "source_page_checked_2026_10_11"
     },
     {
       "id": "athyrium-niponicum-metallicum",
