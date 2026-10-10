@@ -17,8 +17,9 @@
       "source_url": "https://sadzawka.pl/Adiantum_venustum",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_0f41d441b5804e00e69ba4557aa753f0_500_500.jpg?overlay=1",
+        "status": "extracted_from_product_page_unverified_hotlink",
+        "source_url": "https://sadzawka.pl/Adiantum_venustum"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null
@@ -52,8 +53,9 @@
       "source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_4388_500_500/Cyrtomium-fortunei-%E2%80%9EClivicola.jpg?overlay=1",
+        "status": "extracted_from_product_page_unverified_hotlink",
+        "source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null
