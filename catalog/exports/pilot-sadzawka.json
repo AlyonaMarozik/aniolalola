@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "source": "sadzawka.pl",
   "imported_at": "2026-10-11",
   "records": [
@@ -80,7 +80,13 @@
         "evergreen": true,
         "habit": "крупная куртина",
         "container_suitable": true,
-        "foliage_type": "вечнозелёное"
+        "foliage_type": "вечнозелёное",
+        "mature_dimensions_cm": {
+          "height": 50,
+          "width": 50
+        },
+        "size_basis": "provisional_species_estimate",
+        "size_note": "Ориентировочная оценка по типичным габаритам вида/сорта; размер не подтверждён числом из карточки Sadzawka. Не использовать как проверенное значение питомника."
       },
       "source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna",
       "source": "sadzawka.pl",
@@ -135,7 +141,13 @@
         "light": "тень",
         "soil": "влажная, умеренно плодородная",
         "evergreen": true,
-        "foliage_type": "вечнозелёное"
+        "foliage_type": "вечнозелёное",
+        "mature_dimensions_cm": {
+          "height": 50,
+          "width": 50
+        },
+        "size_basis": "provisional_species_estimate",
+        "size_note": "Ориентировочная оценка по типичным габаритам вида/сорта; размер не подтверждён числом из карточки Sadzawka. Не использовать как проверенное значение питомника."
       },
       "source_url": "https://sadzawka.pl/Arachniodes_aristata_Variegata",
       "source": "sadzawka.pl",
@@ -186,7 +198,13 @@
       "description": "Японский папоротник с серебристыми листьями и пурпурными черешками.",
       "traits": {
         "foliage_type": "листопадное",
-        "evergreen": false
+        "evergreen": false,
+        "mature_dimensions_cm": {
+          "height": 45,
+          "width": 45
+        },
+        "size_basis": "provisional_species_estimate",
+        "size_note": "Ориентировочная оценка по типичным габаритам вида/сорта; размер не подтверждён числом из карточки Sadzawka. Не использовать как проверенное значение питомника."
       },
       "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Apple_Court",
       "source": "sadzawka.pl",
@@ -210,7 +228,13 @@
         "soil_structure": "гумусная",
         "moisture": "влажная",
         "foliage_type": "листопадное",
-        "evergreen": false
+        "evergreen": false,
+        "mature_dimensions_cm": {
+          "height": 45,
+          "width": 45
+        },
+        "size_basis": "provisional_species_estimate",
+        "size_note": "Ориентировочная оценка по типичным габаритам вида/сорта; размер не подтверждён числом из карточки Sadzawka. Не использовать как проверенное значение питомника."
       },
       "source_url": "https://sadzawka.pl/Athyrium_niponicum_Metallicum-Wietlica_japonska",
       "source": "sadzawka.pl",
@@ -234,7 +258,13 @@
         "soil_structure": "гумусная",
         "moisture": "влажная",
         "foliage_type": "листопадное",
-        "evergreen": false
+        "evergreen": false,
+        "mature_dimensions_cm": {
+          "height": 45,
+          "width": 45
+        },
+        "size_basis": "provisional_species_estimate",
+        "size_note": "Ориентировочная оценка по типичным габаритам вида/сорта; размер не подтверждён числом из карточки Sadzawka. Не использовать как проверенное значение питомника."
       },
       "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Red_Beauty-Wietlica_japonska",
       "source": "sadzawka.pl",
@@ -259,7 +289,13 @@
         "drainage": "хороший, особенно зимой; застой воды недопустим",
         "habitat": "влажные склоны, приподнятые берега водоёмов",
         "foliage_type": "вечнозелёное",
-        "evergreen": true
+        "evergreen": true,
+        "mature_dimensions_cm": {
+          "height": 15,
+          "width": 40
+        },
+        "size_basis": "provisional_species_estimate",
+        "size_note": "Ориентировочная оценка по типичным габаритам вида/сорта; размер не подтверждён числом из карточки Sadzawka. Не использовать как проверенное значение питомника."
       },
       "source_url": "https://sadzawka.pl/Blechnum_penna_marina-podrzen_morski",
       "source": "sadzawka.pl",
@@ -283,7 +319,13 @@
         "soil_structure": "бедная",
         "moisture": "постоянно влажная",
         "evergreen": true,
-        "foliage_type": "вечнозелёное"
+        "foliage_type": "вечнозелёное",
+        "mature_dimensions_cm": {
+          "height": 50,
+          "width": 50
+        },
+        "size_basis": "provisional_species_estimate",
+        "size_note": "Ориентировочная оценка по типичным габаритам вида/сорта; размер не подтверждён числом из карточки Sadzawka. Не использовать как проверенное значение питомника."
       },
       "source_url": "https://sadzawka.pl/Blechnum_spicant-Podrzen_zebrowiec",
       "source": "sadzawka.pl",
