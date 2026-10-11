@@ -365,6 +365,342 @@
       },
       "data_quality": "source_page_checked",
       "trait_source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace"
+    },
+    {
+      "id": "rosa-boscobel",
+      "botanical_name": "Rosa 'Boscobel'",
+      "inventory_name": "Boscobel",
+      "category": "roses",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "rosa-summer-song",
+      "botanical_name": "Rosa 'Summer Song'",
+      "inventory_name": "Summer Song",
+      "category": "roses",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "rosa-queen-of-sweden",
+      "botanical_name": "Rosa 'Queen of Sweden'",
+      "inventory_name": "Queen of Sweden",
+      "category": "roses",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "rosa-dannahue",
+      "botanical_name": "Rosa 'Dannahue'",
+      "inventory_name": "Dannahue",
+      "category": "roses",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "rosa-golden-celebration",
+      "botanical_name": "Rosa 'Golden Celebration'",
+      "inventory_name": "Golden Celebration",
+      "category": "roses",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "rosa-roald-dahl",
+      "botanical_name": "Rosa 'Roald Dahl'",
+      "inventory_name": "Roald Dahl",
+      "category": "roses",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "rosa-eustacia-vye",
+      "botanical_name": "Rosa 'Eustacia Vye'",
+      "inventory_name": "Eustacia Vye",
+      "category": "roses",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "epipactis-palustris",
+      "botanical_name": "Epipactis palustris",
+      "inventory_name": "Epipactis palustris",
+      "category": "orchids",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "pleione-mix",
+      "botanical_name": "Pleione MIX",
+      "inventory_name": "Pleione MIX",
+      "category": "orchids",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "leucojum-vernum",
+      "botanical_name": "Leucojum vernum",
+      "inventory_name": "Leucojum vernum",
+      "category": "bulbs",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "cyclamen-coum-christmas-tree-leaf-alba",
+      "botanical_name": "Cyclamen coum ‘Christmas Tree Leaf Alba’",
+      "inventory_name": "Cyclamen coum ‘Christmas Tree Leaf Alba’",
+      "category": "bulbs",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "cyclamen-coum-silver-leaf-alba",
+      "botanical_name": "Cyclamen coum ‘Silver Leaf Alba’",
+      "inventory_name": "Cyclamen coum ‘Silver Leaf Alba’",
+      "category": "bulbs",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "bletilla-striata-albomarginata",
+      "botanical_name": "Bletilla striata ‘Albomarginata’",
+      "inventory_name": "Bletilla striata ‘Albomarginata’",
+      "category": "orchids",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "cypripedium-reginae",
+      "botanical_name": "Cypripedium reginae",
+      "inventory_name": "Cypripedium reginae",
+      "category": "orchids",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "cypripedium-kentuckiense-parviflorum",
+      "botanical_name": "Cypripedium kentuckiense × parviflorum",
+      "inventory_name": "Cypripedium kentuckiense × parviflorum",
+      "category": "orchids",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "gentiana-septemfida-var-lagodechiana",
+      "botanical_name": "Gentiana septemfida var. lagodechiana",
+      "inventory_name": "Gentiana septemfida var. lagodechiana",
+      "category": "perennials",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "anemone-nemorosa-robinsoniana",
+      "botanical_name": "Anemone nemorosa ‘Robinsoniana’",
+      "inventory_name": "Anemone nemorosa ‘Robinsoniana’",
+      "category": "perennials",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "hydrangea-paniculata-living-little-rosy",
+      "botanical_name": "Hydrangea paniculata ‘Living Little Rosy’",
+      "inventory_name": "Hydrangea paniculata ‘Living Little Rosy’",
+      "category": "hydrangeas",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "helleborus-hgc-spring-promise-elly",
+      "botanical_name": "Helleborus HGC Spring Promise ‘Elly’",
+      "inventory_name": "Helleborus HGC Spring Promise ‘Elly’",
+      "category": "perennials",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "helleborus-hgc-spring-promise-anja-oudolf",
+      "botanical_name": "Helleborus HGC Spring Promise ‘Anja Oudolf’",
+      "inventory_name": "Helleborus HGC Spring Promise ‘Anja Oudolf’",
+      "category": "perennials",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
+    },
+    {
+      "id": "pieris-japonica-prelude",
+      "botanical_name": "Pieris japonica Prelude",
+      "inventory_name": "Pieris japonica Prelude",
+      "category": "trees",
+      "description": null,
+      "traits": {},
+      "source_url": null,
+      "source": null,
+      "image": {
+        "url": null,
+        "status": "not_collected"
+      },
+      "data_quality": "inventory_name_only_unverified_traits",
+      "growth_3_5_10_years": null
     }
   ],
   "data_policy": "No estimated or inferred botanical trait values. Missing verified values remain null; growth projections only from sourced mature dimensions.",
