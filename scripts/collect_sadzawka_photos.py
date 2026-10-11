@@ -5,6 +5,7 @@ Never downloads/stores photos, never guesses filenames, never overwrites existin
 Run: python scripts/collect_sadzawka_photos.py
 """
 import json
+import argparse
 import re
 import sys
 import time
@@ -72,13 +73,17 @@ def candidates(html, page):
             yield url
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--limit", type=int, default=0, help="Maximum number of missing-photo cards to process (0=all)")
+    args = parser.parse_args()
     doc = json.loads(CATALOG.read_text(encoding="utf-8"))
     results = []
     changed = 0
+    processed = 0
     for item in doc["records"]:
         if item.get("image", {}).get("url"):
             continue
-        name = item["botanical_name"]
+        if args.limit and processed >= args.limit:\n            break\n        processed += 1\n        name = item["botanical_name"]
         page = item.get("source_url")
         entry = {"id": item["id"], "name": name, "source_url": page}
         try:
