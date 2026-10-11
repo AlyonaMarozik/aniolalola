@@ -26,15 +26,15 @@ $('#pfile').addEventListener('change',e=>{const file=e.target.files?.[0];if(!fil
 
 const catalogCategories=[
 {id:'all',name:'Все разделы',pattern:null},
-{id:'ferns',name:'Папоротники',pattern:/^(Adiantum|Asplenium|Arachniodes|Athyrium|Blechnum|Cyrtomium|Dryopteris|Polystichum|Polypodium|Osmunda|Matteuccia)\\b/i},
-{id:'roses',name:'Розы',pattern:/^(Rosa)\\b/i},
-{id:'rhododendrons',name:'Рододендроны и азалии',pattern:/^(Rhododendron)\\b/i},
-{id:'hydrangeas',name:'Гортензии',pattern:/^(Hydrangea)\\b/i},
-{id:'magnolias',name:'Магнолии',pattern:/^(Magnolia)\\b/i},
-{id:'trees',name:'Деревья и кустарники',pattern:/^(Prunus|Acer|Pieris|Photinia|Camellia|Viburnum|Cornus)\\b/i},
-{id:'orchids',name:'Орхидеи',pattern:/^(Cypripedium|Bletilla|Epipactis|Pleione)\\b/i},
-{id:'bulbs',name:'Луковичные и клубневые',pattern:/^(Scilla|Hyacinthoides|Leucojum|Cyclamen|Galanthus|Crocus|Narcissus|Tulipa)\\b/i},
-{id:'perennials',name:'Многолетники',pattern:/^(Helleborus|Gentiana|Anemone|Clematis)\\b/i},
+{id:'ferns',name:'Папоротники',pattern:/^(Adiantum|Asplenium|Arachniodes|Athyrium|Blechnum|Cyrtomium|Dryopteris|Polystichum|Polypodium|Osmunda|Matteuccia)\b/i},
+{id:'roses',name:'Розы',pattern:/^(Rosa)\b/i},
+{id:'rhododendrons',name:'Рододендроны и азалии',pattern:/^(Rhododendron)\b/i},
+{id:'hydrangeas',name:'Гортензии',pattern:/^(Hydrangea)\b/i},
+{id:'magnolias',name:'Магнолии',pattern:/^(Magnolia)\b/i},
+{id:'trees',name:'Деревья и кустарники',pattern:/^(Prunus|Acer|Pieris|Photinia|Camellia|Viburnum|Cornus)\b/i},
+{id:'orchids',name:'Орхидеи',pattern:/^(Cypripedium|Bletilla|Epipactis|Pleione)\b/i},
+{id:'bulbs',name:'Луковичные и клубневые',pattern:/^(Scilla|Hyacinthoides|Leucojum|Cyclamen|Galanthus|Crocus|Narcissus|Tulipa)\b/i},
+{id:'perennials',name:'Многолетники',pattern:/^(Helleborus|Gentiana|Anemone|Clematis)\b/i},
 {id:'other',name:'Прочие',pattern:null}
 ];
 function categoryOf(rec){const name=rec.botanical_name||'';return catalogCategories.slice(1,-1).find(c=>c.pattern.test(name))?.id||'other'}
