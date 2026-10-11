@@ -317,6 +317,28 @@
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Blechnum_spicant-Podrzen_zebrowiec",
       "trait_quality": "source_page_checked_2026_10_11"
+    },
+    {
+      "id": "athyrium-niponicum-burgundy-lace",
+      "botanical_name": "Athyrium niponicum 'Burgundy Lace'",
+      "description": "Японский папоротник с серебристой листвой и бордово-пурпурными жилками.",
+      "traits": {
+        "height_cm": "40–60",
+        "width_cm": "40–60",
+        "light": "полутень–тень",
+        "soil_structure": "гумусная, хорошо дренированная",
+        "moisture": "постоянно влажная",
+        "foliage_type": "листопадный"
+      },
+      "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace",
+      "source": "florosfera.pl",
+      "image": {
+        "url": "https://florosfera.pl/environment/cache/images/productGfx_288_350_350/Wietlica-japonska-Burgundy-Lace---Athyrium-niponicum-Burgundy-Lace.jpg",
+        "status": "linked_from_product_gallery_not_delivery_verified",
+        "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace"
+      },
+      "data_quality": "source_page_verified",
+      "trait_source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace"
     }
   ],
   "data_policy": "No estimated or inferred botanical trait values. Missing verified values remain null; growth projections only from sourced mature dimensions.",
