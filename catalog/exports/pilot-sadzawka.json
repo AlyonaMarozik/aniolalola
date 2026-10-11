@@ -57,8 +57,9 @@
       "source_url": "https://sadzawka.pl/Adiantum_pedatum_Imbricatum-Adiantum_stopowate",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/userdata/public/gfx/ec9a0e3a72a927adb0eb73befa52c07b.jpg",
+        "source_url": "https://sadzawka.pl/Adiantum_pedatum_Imbricatum-Adiantum_stopowate",
+        "status": "source_page_link_extracted_unverified_delivery"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
@@ -116,8 +117,9 @@
       "source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/userdata/public/gfx/da44192ffc91c35ef22a339b96dee6c1.jpg",
+        "source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
+        "status": "source_page_link_extracted_unverified_delivery"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
