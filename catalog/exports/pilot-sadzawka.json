@@ -339,6 +339,27 @@
       },
       "data_quality": "source_page_verified",
       "trait_source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace"
+    },
+    {
+      "id": "athyrium-niponicum-pewter-lace",
+      "botanical_name": "Athyrium niponicum 'Pewter Lace'",
+      "description": "Японский папоротник с серебристо-серыми ажурными листьями и тёмными жилками.",
+      "traits": {
+        "height_cm": "30–40",
+        "light": "полутень–тень",
+        "soil_structure": "гумусная, хорошо дренированная",
+        "moisture": "влажная",
+        "foliage_type": "листопадный"
+      },
+      "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace",
+      "source": "florosfera.pl",
+      "image": {
+        "url": "https://florosfera.pl/environment/cache/images/productGfx_257_350_350/Wietlica-japonska-Pewter-Lace---Athyrium-niponicum-Pewter-Lace.jpg",
+        "status": "product_gallery_link_extracted_delivery_unverified",
+        "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace"
+      },
+      "data_quality": "source_page_checked",
+      "trait_source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace"
     }
   ],
   "data_policy": "No estimated or inferred botanical trait values. Missing verified values remain null; growth projections only from sourced mature dimensions.",
