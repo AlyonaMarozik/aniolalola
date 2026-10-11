@@ -407,11 +407,12 @@
       "source_url": "https://eu.davidaustinroses.com/products/boscobel",
       "source": "David Austin Roses (EU)",
       "image": {
-        "url": null,
-        "status": "official_gallery_direct_image_url_not_verified",
-        "source_url": "https://eu.davidaustinroses.com/products/boscobel"
+        "url": "https://eu.davidaustinroses.com/cdn/shop/products/445344a22be01a78eed20624cb8b6b03_b591613d-4215-417d-a90d-8dbd64f1e424.jpg?v=1670971193&width=1200",
+        "status": "official_image_opened_in_web_viewer_browser_hotlink_unverified",
+        "source_url": "https://eu.davidaustinroses.com/products/boscobel",
+        "alternate_url": "https://eu.davidaustinroses.com/cdn/shop/products/a35874e914f9f3bcfa59e966ac66b577.jpg?v=1660560021&width=2000"
       },
-      "data_quality": "official_manufacturer_traits_verified_image_pending",
+      "data_quality": "official_manufacturer_traits_and_image_url_verified_web_viewer",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://eu.davidaustinroses.com/products/boscobel",
       "trait_quality": "official_manufacturer_page_checked_2026_10_12"
