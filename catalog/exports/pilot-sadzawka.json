@@ -146,8 +146,9 @@
       "source_url": "https://sadzawka.pl/Arachniodes_aristata_Variegata",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/environment/cache/images/500_500_productGfx_6905/Arachniodes-aristata-Variegata.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Arachniodes_aristata_Variegata",
+        "status": "extracted_from_product_page_image_link_delivery_unverified"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
@@ -224,8 +225,9 @@
       "source_url": "https://sadzawka.pl/Athyrium_niponicum_Metallicum-Wietlica_japonska",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_4430_500_500/Athyrium-nipponicum-%E2%80%9EMetallicum.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Athyrium_niponicum_Metallicum-Wietlica_japonska",
+        "status": "extracted_from_product_page_image_link_delivery_unverified"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
@@ -251,8 +253,9 @@
       "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Red_Beauty-Wietlica_japonska",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_6367_500_500/Athyrium-nipponicum-%E2%80%9ERed-Beauty%2C-fot.-flickr.com%2C-uzytkownik-Megan-Hansen%2C-licencja-CC.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Athyrium_nipponicum_Red_Beauty-Wietlica_japonska",
+        "status": "extracted_from_product_page_image_link_delivery_unverified"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
@@ -281,8 +284,9 @@
       "source_url": "https://sadzawka.pl/Blechnum_penna_marina-podrzen_morski",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/environment/cache/images/500_500_productGfx_4385/Blechnum-penna-marina.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Blechnum_penna_marina-podrzen_morski",
+        "status": "extracted_from_product_page_image_link_delivery_unverified"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
@@ -310,8 +314,9 @@
       "source_url": "https://sadzawka.pl/Blechnum_spicant-Podrzen_zebrowiec",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_17fa0115b318ce05025405426576732f_500_500.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Blechnum_spicant-Podrzen_zebrowiec",
+        "status": "extracted_from_product_page_image_link_delivery_unverified"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
