@@ -422,7 +422,7 @@
       "botanical_name": "Rosa 'Summer Song'",
       "inventory_name": "Summer Song",
       "category": "roses",
-      "description": "Прямостоячий куст; насыщенные оранжево-красные чашевидные цветки. Аромат с оттенками хризантемовых листьев, спелого банана и чая.",
+      "description": "Прямостоячий густой куст с необычными оранжево-красными чашевидными цветками; аромат с нотами листьев хризантемы, спелого банана и чая.",
       "traits": {
         "cultivar_code": "Austango",
         "breeder": "David Austin",
@@ -431,30 +431,53 @@
         "flowering": "повторное цветение",
         "fragrance": "сильный, чайный",
         "flower_size": "средний",
-        "light": "солнце",
-        "soil": "различные типы почв (по производителю)",
-        "habit": "кустовая английская роза",
+        "light": "полное солнце",
+        "soil": "все типы почв",
+        "habit": "прямостоячий густой куст",
         "height_cm": 125,
         "width_cm": 125,
-        "size_age_note": "Размеры производителя для 3-летнего куста при ежегодной обрезке",
-        "family": "English Shrub Rose"
+        "size_age_note": "Размеры производителя относятся к 3-летнему кусту при ежегодной обрезке; в модели Garden Planner они принимаются за 100%.",
+        "family": "English Shrub Rose",
+        "aspect": "восток, юг, запад",
+        "recommended_uses": "Cutting; Mixed Border",
+        "growing_conditions": {
+          "facing": [
+            "East",
+            "South",
+            "West"
+          ],
+          "sunlight": [
+            "Full Sunlight"
+          ],
+          "soil": [
+            "All soil types"
+          ]
+        },
+        "location_tags": [
+          "Cutting",
+          "Mixed Border"
+        ],
+        "fragrance_notes": "листья хризантемы, спелый банан, чай"
       },
       "source_url": "https://eu.davidaustinroses.com/products/summer-song",
       "source": "David Austin Roses (EU)",
       "image": {
-        "url": null,
-        "status": "not_collected"
+        "url": "https://eu.davidaustinroses.com/cdn/shop/products/96f1aa3f4a25623cfdd44513ed7ab30b_9bdb1ba1-fa92-4084-9487-9cba147d90dd.jpg?v=1660570818&width=2000",
+        "status": "official_gallery_url_extracted_web_viewer_cache_miss_browser_hotlink_unverified",
+        "source_url": "https://eu.davidaustinroses.com/products/summer-song",
+        "alternate_url": "https://eu.davidaustinroses.com/cdn/shop/products/c103721a8262b376c1b150936d516a0e.jpg?v=1660570810&width=2000"
       },
-      "data_quality": "official_cultivar_page_verified_2026_10_11",
+      "data_quality": "official_manufacturer_traits_verified_image_url_cache_miss_web_viewer",
       "growth_3_5_10_years": null,
-      "trait_source_url": "https://eu.davidaustinroses.com/products/summer-song"
+      "trait_source_url": "https://eu.davidaustinroses.com/products/summer-song",
+      "trait_quality": "official_manufacturer_page_checked_2026_10_12"
     },
     {
       "id": "rosa-queen-of-sweden",
       "botanical_name": "Rosa 'Queen of Sweden'",
       "inventory_name": "Queen of Sweden",
       "category": "roses",
-      "description": "Прямостоячий куст; чашевидные цветки меняют оттенок с абрикосово-розового на нежно-розовый. Аромат мирры.",
+      "description": "Прямостоячий куст с чашевидными цветками: от нежного абрикосово-розового в бутонах до мягкого светло-розового при раскрытии; мирровый аромат.",
       "traits": {
         "cultivar_code": "Austiger",
         "breeder": "David Austin",
@@ -463,30 +486,57 @@
         "flowering": "повторное цветение",
         "fragrance": "средний, мирра",
         "flower_size": "средний",
-        "light": "солнце или полутень",
-        "soil": "различные типы почв (по производителю)",
-        "habit": "кустовая английская роза",
+        "light": "полное солнце или полутень",
+        "soil": "все типы почв",
+        "habit": "густой прямостоячий куст",
         "height_cm": 125,
         "width_cm": 90,
-        "size_age_note": "Размеры производителя для 3-летнего куста при ежегодной обрезке",
-        "family": "English Shrub Rose"
+        "size_age_note": "Размеры производителя относятся к 3-летнему кусту при ежегодной обрезке; в модели Garden Planner они принимаются за 100%.",
+        "family": "English Shrub Rose",
+        "aspect": "север, восток, юг, запад",
+        "recommended_uses": "Cutting; Mixed Border; Rose Border; Rose Hedges; Partial Shade",
+        "growing_conditions": {
+          "facing": [
+            "North",
+            "East",
+            "South",
+            "West"
+          ],
+          "sunlight": [
+            "Full Sunlight",
+            "Partial Shade"
+          ],
+          "soil": [
+            "All soil types"
+          ]
+        },
+        "location_tags": [
+          "Cutting",
+          "Mixed Border",
+          "Rose Border",
+          "Rose Hedges",
+          "Partial Shade"
+        ]
       },
       "source_url": "https://eu.davidaustinroses.com/products/queen-of-sweden",
       "source": "David Austin Roses (EU)",
       "image": {
-        "url": null,
-        "status": "not_collected"
+        "url": "https://eu.davidaustinroses.com/cdn/shop/products/1ce60f1521210d90000c51fb3caf0c75_fa08b41c-8139-493d-96cf-328aa73f7dae.jpg?v=1673551810&width=2000",
+        "status": "official_gallery_url_extracted_web_viewer_cache_miss_browser_hotlink_unverified",
+        "source_url": "https://eu.davidaustinroses.com/products/queen-of-sweden",
+        "alternate_url": "https://eu.davidaustinroses.com/cdn/shop/products/c1a065c7bf40bc34edcf5a55ad8bb13c.jpg?v=1673551805&width=2000"
       },
-      "data_quality": "official_cultivar_page_verified_2026_10_11",
+      "data_quality": "official_manufacturer_traits_verified_image_url_cache_miss_web_viewer",
       "growth_3_5_10_years": null,
-      "trait_source_url": "https://eu.davidaustinroses.com/products/queen-of-sweden"
+      "trait_source_url": "https://eu.davidaustinroses.com/products/queen-of-sweden",
+      "trait_quality": "official_manufacturer_page_checked_2026_10_12"
     },
     {
       "id": "rosa-dannahue",
       "botanical_name": "Rosa 'Dannahue'",
       "inventory_name": "Dannahue",
       "category": "roses",
-      "description": "Компактный куст с прямостоячими побегами; подходит для контейнеров. Аромат с нотами лимона, личи и свежего абрикоса.",
+      "description": "Компактный прямостоячий густой куст; подходит для контейнеров, стен и заборов, включая менее солнечные места; фруктовый аромат с нотами лимона, личи и свежего абрикоса.",
       "traits": {
         "cultivar_code": "Ausa6b15",
         "breeder": "David Austin",
@@ -495,30 +545,59 @@
         "flowering": "повторное цветение",
         "fragrance": "средний, фруктовый",
         "flower_size": "средний",
-        "light": "солнце или полутень",
-        "soil": "различные типы почв (по производителю)",
-        "habit": "кустовая английская роза",
+        "light": "полное солнце или полутень",
+        "soil": "все типы почв",
+        "habit": "компактный прямостоячий густой куст",
         "height_cm": 110,
         "width_cm": 125,
-        "size_age_note": "Размеры производителя для 3-летнего куста при ежегодной обрезке",
-        "family": "English Shrub Rose"
+        "size_age_note": "Размеры производителя относятся к 3-летнему кусту при ежегодной обрезке; в модели Garden Planner они принимаются за 100%.",
+        "family": "English Shrub Rose",
+        "aspect": "север, восток, юг, запад",
+        "recommended_uses": "Attracting Bees; Mixed Border; Pots & Containers; Rose Border; Rose Hedges; Rose Hips; Partial Shade",
+        "growing_conditions": {
+          "facing": [
+            "North",
+            "East",
+            "South",
+            "West"
+          ],
+          "sunlight": [
+            "Full Sunlight",
+            "Partial Shade"
+          ],
+          "soil": [
+            "All soil types"
+          ]
+        },
+        "location_tags": [
+          "Attracting Bees",
+          "Mixed Border",
+          "Pots & Containers",
+          "Rose Border",
+          "Rose Hedges",
+          "Rose Hips",
+          "Partial Shade"
+        ],
+        "fragrance_notes": "лимон, личи, свежий абрикос"
       },
       "source_url": "https://eu.davidaustinroses.com/products/dannahue",
       "source": "David Austin Roses (EU)",
       "image": {
-        "url": null,
-        "status": "not_collected"
+        "url": "https://eu.davidaustinroses.com/cdn/shop/files/ba3e99d549032d74f463a4ad382be386.jpg?v=1696877674&width=2000",
+        "status": "official_image_opened_in_web_viewer_browser_hotlink_unverified",
+        "source_url": "https://eu.davidaustinroses.com/products/dannahue"
       },
-      "data_quality": "official_cultivar_page_verified_2026_10_11",
+      "data_quality": "official_manufacturer_traits_verified_image_url_opened_in_web_viewer",
       "growth_3_5_10_years": null,
-      "trait_source_url": "https://eu.davidaustinroses.com/products/dannahue"
+      "trait_source_url": "https://eu.davidaustinroses.com/products/dannahue",
+      "trait_quality": "official_manufacturer_page_checked_2026_10_12"
     },
     {
       "id": "rosa-golden-celebration",
       "botanical_name": "Rosa 'Golden Celebration'",
       "inventory_name": "Golden Celebration",
       "category": "roses",
-      "description": "Крупные жёлтые чашевидные цветки, дуговидные побеги. Чайный аромат с нотами сотерна и клубники.",
+      "description": "Крупные насыщенно-жёлтые чашевидные цветки; округлый куст с дугообразными побегами; сильный чайный аромат с нотами вина сотерн и клубники.",
       "traits": {
         "cultivar_code": "Ausgold",
         "breeder": "David Austin",
@@ -527,30 +606,55 @@
         "flowering": "повторное цветение",
         "fragrance": "сильный, чайный",
         "flower_size": "крупный",
-        "light": "солнце",
-        "soil": "различные типы почв (по производителю)",
-        "habit": "кустовая английская роза",
+        "light": "полное солнце",
+        "soil": "все типы почв",
+        "habit": "округлый куст с дугообразными ветвями",
         "height_cm": 125,
         "width_cm": 125,
-        "size_age_note": "Размеры производителя для 3-летнего куста при ежегодной обрезке",
-        "family": "English Shrub Rose"
+        "size_age_note": "Размеры производителя относятся к 3-летнему кусту при ежегодной обрезке; в модели Garden Planner они принимаются за 100%.",
+        "family": "English Shrub Rose",
+        "aspect": "восток, юг, запад",
+        "recommended_uses": "Attracting Bees; Mixed Border; Pots & Containers; Rose Hedges; Rose Hips",
+        "growing_conditions": {
+          "facing": [
+            "East",
+            "South",
+            "West"
+          ],
+          "sunlight": [
+            "Full Sunlight"
+          ],
+          "soil": [
+            "All soil types"
+          ]
+        },
+        "location_tags": [
+          "Attracting Bees",
+          "Mixed Border",
+          "Pots & Containers",
+          "Rose Hedges",
+          "Rose Hips"
+        ],
+        "fragrance_notes": "вино сотерн, клубника"
       },
       "source_url": "https://eu.davidaustinroses.com/products/golden-celebration",
       "source": "David Austin Roses (EU)",
       "image": {
-        "url": null,
-        "status": "not_collected"
+        "url": "https://eu.davidaustinroses.com/cdn/shop/products/a8ada238d8a90c52b3aa3643cf60800f.jpg?v=1665786836&width=2000",
+        "status": "official_image_opened_in_web_viewer_browser_hotlink_unverified",
+        "source_url": "https://eu.davidaustinroses.com/products/golden-celebration"
       },
-      "data_quality": "official_cultivar_page_verified_2026_10_11",
+      "data_quality": "official_manufacturer_traits_verified_image_url_opened_in_web_viewer",
       "growth_3_5_10_years": null,
-      "trait_source_url": "https://eu.davidaustinroses.com/products/golden-celebration"
+      "trait_source_url": "https://eu.davidaustinroses.com/products/golden-celebration",
+      "trait_quality": "official_manufacturer_page_checked_2026_10_12"
     },
     {
       "id": "rosa-roald-dahl",
       "botanical_name": "Rosa 'Roald Dahl'",
       "inventory_name": "Roald Dahl",
       "category": "roses",
-      "description": "Округлый куст с небольшим количеством шипов; чашевидные абрикосовые розетки и фруктово-чайный аромат.",
+      "description": "Округлый густой куст с небольшим количеством шипов и абрикосовыми чашевидными розетками; фруктово-чайный аромат, высокая устойчивость по описанию производителя.",
       "traits": {
         "cultivar_code": "Ausowlish",
         "breeder": "David Austin",
@@ -559,30 +663,56 @@
         "flowering": "повторное цветение",
         "fragrance": "средний, чайный",
         "flower_size": "средний",
-        "light": "солнце или полутень",
-        "soil": "различные типы почв (по производителю)",
-        "habit": "кустовая английская роза",
+        "light": "полное солнце или полутень",
+        "soil": "все типы почв",
+        "habit": "округлый густой куст, мало шипов",
         "height_cm": 90,
         "width_cm": 110,
-        "size_age_note": "Размеры производителя для 3-летнего куста при ежегодной обрезке",
-        "family": "English Shrub Rose"
+        "size_age_note": "Размеры производителя относятся к 3-летнему кусту при ежегодной обрезке; в модели Garden Planner они принимаются за 100%.",
+        "family": "English Shrub Rose",
+        "aspect": "север, восток, юг, запад",
+        "recommended_uses": "Cutting; Mixed Border; Pots & Containers; Rose Hedges; Partial Shade",
+        "growing_conditions": {
+          "facing": [
+            "North",
+            "East",
+            "South",
+            "West"
+          ],
+          "sunlight": [
+            "Full Sunlight",
+            "Partial Shade"
+          ],
+          "soil": [
+            "All soil types"
+          ]
+        },
+        "location_tags": [
+          "Cutting",
+          "Mixed Border",
+          "Pots & Containers",
+          "Rose Hedges",
+          "Partial Shade"
+        ]
       },
       "source_url": "https://eu.davidaustinroses.com/products/roald-dahl",
       "source": "David Austin Roses (EU)",
       "image": {
-        "url": null,
-        "status": "not_collected"
+        "url": "https://eu.davidaustinroses.com/cdn/shop/products/3883be10e26041cba525835679f4f5f4.jpg?v=1660574642&width=2000",
+        "status": "official_image_opened_in_web_viewer_browser_hotlink_unverified",
+        "source_url": "https://eu.davidaustinroses.com/products/roald-dahl"
       },
-      "data_quality": "official_cultivar_page_verified_2026_10_11",
+      "data_quality": "official_manufacturer_traits_verified_image_url_opened_in_web_viewer",
       "growth_3_5_10_years": null,
-      "trait_source_url": "https://eu.davidaustinroses.com/products/roald-dahl"
+      "trait_source_url": "https://eu.davidaustinroses.com/products/roald-dahl",
+      "trait_quality": "official_manufacturer_page_checked_2026_10_12"
     },
     {
       "id": "rosa-eustacia-vye",
       "botanical_name": "Rosa 'Eustacia Vye'",
       "inventory_name": "Eustacia Vye",
       "category": "roses",
-      "description": "Сильнорослый прямостоячий куст; густомахровые розово-абрикосовые розетки, светлеющие при старении, с сильным фруктовым ароматом.",
+      "description": "Сильнорослый густой прямостоячий куст с розово-абрикосовыми розетками на красноватых побегах; сильный фруктовый аромат; сорт описан производителем как здоровый.",
       "traits": {
         "cultivar_code": "Ausegdon",
         "breeder": "David Austin",
@@ -591,23 +721,48 @@
         "flowering": "повторное цветение",
         "fragrance": "сильный, фруктовый",
         "flower_size": "средний",
-        "light": "солнце или полутень",
-        "soil": "различные типы почв (по производителю)",
-        "habit": "кустовая английская роза",
+        "light": "полное солнце или полутень",
+        "soil": "все типы почв",
+        "habit": "сильнорослый густой прямостоячий куст",
         "height_cm": 125,
         "width_cm": 90,
-        "size_age_note": "Размеры производителя для 3-летнего куста при ежегодной обрезке",
-        "family": "English Shrub Rose"
+        "size_age_note": "Размеры производителя относятся к 3-летнему кусту при ежегодной обрезке; в модели Garden Planner они принимаются за 100%.",
+        "family": "English Shrub Rose",
+        "aspect": "север, восток, юг, запад",
+        "recommended_uses": "Mixed Border; Pots & Containers; Rose Border; Partial Shade",
+        "growing_conditions": {
+          "facing": [
+            "North",
+            "East",
+            "South",
+            "West"
+          ],
+          "sunlight": [
+            "Full Sunlight",
+            "Partial Sunlight"
+          ],
+          "soil": [
+            "All soil types"
+          ]
+        },
+        "location_tags": [
+          "Mixed Border",
+          "Pots & Containers",
+          "Rose Border",
+          "Partial Shade"
+        ]
       },
-      "source_url": "https://eu.davidaustinroses.com/products/eustacia-vye",
+      "source_url": "https://eu.davidaustinroses.com/products/eustacia-vye/1000",
       "source": "David Austin Roses (EU)",
       "image": {
-        "url": null,
-        "status": "not_collected"
+        "url": "https://eu.davidaustinroses.com/cdn/shop/products/c52fd5238ed35416d253c6ca9ae6d766.jpg?v=1668378117&width=2000",
+        "status": "official_image_opened_in_web_viewer_browser_hotlink_unverified",
+        "source_url": "https://eu.davidaustinroses.com/products/eustacia-vye/1000"
       },
-      "data_quality": "official_cultivar_page_verified_2026_10_11",
+      "data_quality": "official_manufacturer_traits_verified_image_url_opened_in_web_viewer",
       "growth_3_5_10_years": null,
-      "trait_source_url": "https://eu.davidaustinroses.com/products/eustacia-vye"
+      "trait_source_url": "https://eu.davidaustinroses.com/products/eustacia-vye/1000",
+      "trait_quality": "official_manufacturer_page_checked_2026_10_12"
     },
     {
       "id": "epipactis-palustris",
