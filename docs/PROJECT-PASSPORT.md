@@ -282,3 +282,9 @@ Cypripedium kentuckiense × parviflorum: подтверждён зарегист
 ### 2026-10-12 — точная фотография Cypripedium kentuckiense × parviflorum
 
 Пользователь указал точную карточку Florosfera `https://florosfera.pl/Obuwik-Cypripedium-kentuckiense-x-parviflorum` и подтвердил характерную **жёлтую губу** цветка. Из галереи этой страницы извлечены прямые URL трёх фотографий (`productGfx_412`, `productGfx_493`, `productGfx_495`); первый сохранён в `image.url`, два остальных — в `image.alternate_urls`. Коммит `f19b8436eaa3ce29753b01c934a74d967bf6ca4f`. Статус: exact product gallery URL extracted; фактический hotlink в браузере Garden Planner ещё не проверен. Предыдущее ограничение «нет фотографии Kentucky» теперь снято.
+
+### 2026-10-12 — единый рендерер характеристик карточек каталога и планировщика
+
+Коммит `a64a811e19290674a301bda4cc57dd9954dfb6f7`: устранена системная рассинхронизация. Прежде `showProfile` вручную отображал ограниченный набор ключей `traits` и не видел новых `height_cm_min/max`, `width_cm_min/max`, `flowering`, `flower_color`, `foliage`, `care`, `frost_resistance` и других; `showCatalogDetail` перебирал все поля. Теперь **обе карточки вызывают одну функцию `eachTrait(rec, add)`** с единым словарём `traitLabels` и `traitValue`. Любое новое непустое поле `traits` отображается в обоих местах, даже если ключ ещё не имеет человекочитаемой подписи. Общий `growthForecasts(rec,add)` показывает одинаковые модельные размеры 70/100/130% в обоих местах и учитывает `height_cm_min/max`, `width_cm_min/max`, `mature_dimensions_cm` и размеры листьев. Схема Inventory, значения каталога и пользовательский localStorage не менялись.
+
+Оговорка: 70/100/130% — **условная модель**, не ботанически подтверждённый темп роста; в обоих представлениях помечена «модель». Реальная загрузка сайта на устройстве пользователя не проверялась.
