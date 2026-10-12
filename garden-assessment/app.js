@@ -29,13 +29,22 @@ function shown(p){return !(hideBg&&p.background&&!p.fixed)}
 function active(p){if(season==='all')return true;const mm=month===null?seasons[season]:[month];return mm.some(m=>(effect!=='leaf'&&p.flower.includes(m))||(effect!=='flower'&&p.leaf.includes(m)))}
 function controls(id,items,value,fn){const el=$(id);el.replaceChildren();for(const [label,v] of items){const b=document.createElement('button');b.textContent=label;if(v===value)b.className='on';b.onclick=()=>fn(v);el.append(b)}}
 function draw(tag,attrs){const n=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);layer.append(n);return n}
+function labelLines(name){
+const raw=String(name||'').trim();
+const clipped=Array.from(raw).length>25?Array.from(raw).slice(0,24).join('').trimEnd()+'…':raw;
+if(clipped.length<=13)return[clipped];
+const middle=Math.ceil(clipped.length/2);
+const breaks=[...clipped.matchAll(/\s+/g)].map(m=>m.index).filter(i=>i>=5&&i<=18);
+const split=breaks.length?breaks.reduce((a,b)=>Math.abs(b-middle)<Math.abs(a-middle)?b:a):middle;
+return[clipped.slice(0,split).trim(),clipped.slice(split).trim()].filter(Boolean);
+}
 function render(){
 controls('assessment-season',[['Все','all'],['Весна','spring'],['Лето','summer'],['Осень','autumn'],['Зима','winter']],season,v=>{season=v;month=null;render()});
 $('assessment-month').hidden=season==='all';if(season!=='all')controls('assessment-month',[['Весь сезон',null],...seasons[season].map(m=>[months[m],m])],month,v=>{month=v;render()});
 controls('assessment-age',[['Сейчас',0],['3 года',3],['5 лет',5],['10 лет',10]],age,v=>{age=v;render()});
 controls('assessment-effect',[['Вся декоративность','all'],['Цветение','flower'],['Листва / структура','leaf']],effect,v=>{effect=v;render()});
 $('assessment-bg').textContent=hideBg?'Показать фон':'Убрать фон';$('assessment-bg').classList.toggle('on',hideBg);layer.replaceChildren();
-let count=0;for(const p of all()){if(!shown(p))continue;count++;const x=p.x*100,y=58+p.y*100,r=diameter(p)*50,on=active(p);draw('circle',{cx:x,cy:y,r,fill:on?p.color:'none','fill-opacity':on?.43:0,stroke:p.id===selected?'#aa772c':on?p.color:'#9ca79b','stroke-width':p.id===selected?4:1.5,'stroke-dasharray':on?'none':'5 5'});if(on||p.id===selected){const t=draw('text',{x,y:y+3,'text-anchor':'middle','font-size':10,'font-weight':600,fill:'#293b30','pointer-events':'none'});t.textContent=p.name.length>17?p.name.slice(0,16)+'…':p.name}}
+let count=0;for(const p of all()){if(!shown(p))continue;count++;const x=p.x*100,y=58+p.y*100,r=diameter(p)*50,on=active(p);draw('circle',{cx:x,cy:y,r,fill:on?p.color:'none','fill-opacity':on?.43:0,stroke:p.id===selected?'#aa772c':on?p.color:'#9ca79b','stroke-width':p.id===selected?4:1.5,'stroke-dasharray':on?'none':'5 5'});if(on||p.id===selected){const lines=labelLines(p.name);const t=draw('text',{x,y:y+(lines.length===2?-3:3),'text-anchor':'middle','font-size':10,'font-weight':600,fill:'#293b30','pointer-events':'none'});for(const [i,line] of lines.entries()){const span=document.createElementNS(ns,'tspan');span.setAttribute('x',x);if(i)span.setAttribute('dy','11');span.textContent=line;t.append(span)}}}
 const p=all().find(p=>p.id===selected);$('assessment-selected').textContent=p?p.name+' · '+diameter(p).toFixed(2)+' м · '+(p.background?'фон':p.fixed?'из Плана':'визуал'):'Выбери кружочек';$('assessment-count').textContent=count+' кружочков · изменения не записываются в План';
 const used=new Map();for(const p of plants.filter(p=>p.id.startsWith('plan:')))used.set(p.name,(used.get(p.name)||0)+1);for(const p of extras)used.set(p.name,(used.get(p.name)||0)+1);
 const sel=$('assessment-add'),prev=sel.value;sel.replaceChildren(new Option('— Растение из inventory —',''));for(const item of inventory){const left=Number(item.count||0)-(used.get(item.name)||0);if(left>0)sel.append(new Option(item.name+' · доступно '+left,item.name))}if([...sel.options].some(o=>o.value===prev))sel.value=prev;
