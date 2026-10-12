@@ -278,3 +278,7 @@
 Коммит `da973637566efb58188e43b4b3ffb50c4b609632`: Bletilla striata ‘Albomarginata’ получила **иллюстративное** фото близкой формы ‘Albostriata’ от Dancing Oaks. **Не подтверждено**, что это тот же сорт; точная форма купленного растения по фотографии не установлена. Коммит `ac82c834e0e4daf42831cf45a09b131eeed953cb` выводит `image.caption` под фото в подробной карточке, чтобы пользователь видел предупреждение. Hotlink ещё не проверен в опубликованном приложении.
 
 Cypripedium kentuckiense × parviflorum: подтверждён зарегистрированный грекс Cypripedium ‘Rascal’ (RHS / Orchidex / OrchidRoots), но **фото не добавлено**: прямой URL изображения именно этого гибрида пока не найден; не подменять фото C. kentuckiense, C. parviflorum или иного гибрида. Не считать задачу двух точных фото полностью завершённой.
+
+### 2026-10-12 — точная фотография Cypripedium kentuckiense × parviflorum
+
+Пользователь указал точную карточку Florosfera `https://florosfera.pl/Obuwik-Cypripedium-kentuckiense-x-parviflorum` и подтвердил характерную **жёлтую губу** цветка. Из галереи этой страницы извлечены прямые URL трёх фотографий (`productGfx_412`, `productGfx_493`, `productGfx_495`); первый сохранён в `image.url`, два остальных — в `image.alternate_urls`. Коммит `f19b8436eaa3ce29753b01c934a74d967bf6ca4f`. Статус: exact product gallery URL extracted; фактический hotlink в браузере Garden Planner ещё не проверен. Предыдущее ограничение «нет фотографии Kentucky» теперь снято.
