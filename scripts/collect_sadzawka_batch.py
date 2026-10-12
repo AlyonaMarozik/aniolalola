@@ -15,6 +15,7 @@ import collect_sadzawka_catalog as core
 ROOT=Path(__file__).resolve().parents[1]
 OUTPUT=ROOT/'catalog/exports/sadzawka-catalog-review.json'
 QUEUE=ROOT/'catalog/exports/sadzawka-catalog-queue.json'
+FAILED=ROOT/'catalog/exports/sadzawka-catalog-failed.json'
 FIRST_GROUPS=('Bodziszki','Hosty','Paprocie','Piwonie')
 BULK=re.compile(r'(?i)\b(?:\d+\s*(?:szt(?:uk)?|sadzonek|pack|pakiet)|zestaw|komplet|kolekcja|mix|mieszanka)\b')
 GENERA={
@@ -209,5 +210,6 @@ def main():
     OUTPUT.parent.mkdir(parents=True,exist_ok=True)
     OUTPUT.write_text(json.dumps(review,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     QUEUE.write_text(json.dumps(state,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    FAILED.write_text(json.dumps({'source':'sadzawka.pl','items':state['failed'],'incomplete':state['incomplete']},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(state['stats'],ensure_ascii=False))
 if __name__=='__main__':main()
