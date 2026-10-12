@@ -170,105 +170,11 @@ def convert_field(key,value):
  return value[:220]
 
 BOTANICAL_PROSE=re.compile(r'(?i)(roślin|bylin|kwiat|liści|liść|pęd|papro|pokrój|kwit|ogr[oó]d|odmian|gleb|wilgot|cieni|słonec|mroz|wysokość)')
-LABELLED=re.compile(r'^([^:]{2,42}):\\s*(.{1,400})
- parser=DescriptionText();parser.feed(html_text)
- lines=parser.lines()
- # Prefer labelled botanical field block; generic commercial metadata is ignored.
- start=next((i for i,line in enumerate(lines) if re.match(r'(?i)^rodzina\s*:',line)),None)
- if start is None:
-  start=next((i for i,line in enumerate(lines) if re.match(r'(?i)^(stanowisko|wysokość|kwitnienie)\s*:',line)),None)
- if start is None:return {},polish_first_paragraph(parser.paragraphs)
- fields={}
- for line in lines[start:start+75]:
-  if END.search(line) or line.lower().startswith(('rośnie w doniczce','rosnie w doniczce')):break
-  m=re.match(r'^([^:]{2,42}):\s*(.{1,400})$',line)
-  if m:
-   key=FIELD_MAP.get(m.group(1).lower().strip())
-   if key and key not in fields and not RETAIL.search(m.group(1)):
-    val=convert_field(key,m.group(2).strip())
-    if val is not None:fields[key]=val
-   continue
- return fields,polish_first_paragraph(parser.paragraphs)
-
-def detail(item):
- html_page=fetch(item['source_url'])
- s=Scan();s.feed(html_page)
- meta=s.meta
- name=title(meta.get('og:title') or ' '.join(s.head)) or item['botanical_name']
- traits,body=botanical_text(html_page,name)
- # Preserve the original Polish opening paragraph; translation and semantic enrichment follow later.
- description=body
- if not description:
-  summary=' '.join(html.unescape(meta.get('og:description') or meta.get('description') or '').split())
-  description=polish_first_paragraph([summary])
- record={'id':identifier(name),'botanical_name':name,'description':description,'traits':traits,
-         'source_url':item['source_url'],'source':'sadzawka.pl',
-         'sadzawka_category':item['category'],'data_quality':'product_page_auto_extracted_unreviewed',
-         'trait_source_url':item['source_url'],'trait_quality':'auto_extracted_requires_review','description_language':'pl',
-         'growth_3_5_10_years':None}
- img=safe(urljoin(item['source_url'],meta.get('og:image',''))) if meta.get('og:image') else ''
- if img and re.search(r'\.(?:jpe?g|png|webp)$',urlparse(img).path,re.I):
-  record['image']={'url':img,'source_url':item['source_url'],'status':'meta_unverified'}
- return record
-
-def main():
- ap=argparse.ArgumentParser()
- ap.add_argument('--limit',type=int,default=50)
- ap.add_argument('--delay',type=float,default=1.3)
- ap.add_argument('--pages-per-category',type=int,default=40)
- args=ap.parse_args()
- if not 1<=args.limit<=200 or args.delay<1 or not 1<=args.pages_per_category<=60:raise SystemExit('Unsafe limits')
- q=load(QUEUE,{'pending':[],'completed':[],'page_errors':[],'category_pages':{}})
- staged=load(OUT,{'source':'sadzawka.pl','scope':'botanical terrestrial categories only','records':[],'skipped':[],'errors':[]})
- existing={normal(p.get('botanical_name')) for p in load(LIVE,{'records':[]})['records']}
- existing|={normal(p.get('botanical_name')) for p in staged['records']}
- urls={p['source_url'] for p in q['pending']+q['completed']}
- # Repeated runs retain the queue and review records. Never alter the live catalog.
- for cat,base in CATEGORIES.items():
-  if cat in q['category_pages']:continue
-  visited=set();pages=[base];failed=False;discovered=0
-  while pages and len(visited)<args.pages_per_category:
-   u=pages.pop(0)
-   if u in visited:continue
-   visited.add(u)
-   try:
-    items,more=category_page(u)
-    discovered+=len(items)
-    for p in items:
-     if p['source_url'] not in urls:
-      p['category']=cat;q['pending'].append(p);urls.add(p['source_url'])
-    for link in more:
-     if link not in visited and link not in pages:pages.append(link)
-   except Exception as e:
-    failed=True
-    q['page_errors'].append({'category':cat,'url':u,'error':str(e)[:200]})
-   time.sleep(args.delay)
-  # Keep failed/empty/incomplete categories retryable rather than silently marking them done.
-  if not failed and not pages and discovered:
-   q['category_pages'][cat]=len(visited)
- processed=0;added=0
- while q['pending'] and processed<args.limit:
-  item=q['pending'].pop(0);processed+=1
-  try:
-   rec=detail(item);key=normal(rec['botanical_name'])
-   if key in existing:staged['skipped'].append({'name':rec['botanical_name'],'reason':'duplicate','url':item['source_url']})
-   elif not title(rec['botanical_name']):staged['skipped'].append({'reason':'excluded','url':item['source_url']})
-   else:staged['records'].append(rec);existing.add(key);added+=1
-  except Exception as e:staged['errors'].append({'url':item['source_url'],'error':str(e)[:200]})
-  q['completed'].append(item);time.sleep(args.delay)
- staged['last_run_at']=datetime.now(timezone.utc).isoformat()
- staged['stats']={'staged':len(staged['records']),'added_this_run':added,'processed_this_run':processed,'remaining':len(q['pending']),'skipped':len(staged['skipped']),'errors':len(staged['errors']),'category_errors':len(q['page_errors'])}
- OUT.parent.mkdir(parents=True,exist_ok=True)
- OUT.write_text(json.dumps(staged,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
- QUEUE.write_text(json.dumps(q,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
- print(json.dumps(staged['stats'],ensure_ascii=False))
-if __name__=='__main__':main()
-)
+LABELLED=re.compile(r'^([^:]{2,42}):\s*(.{1,400})$')
 
 def polish_first_paragraph(paragraphs):
  for paragraph in paragraphs:
   line=' '.join(paragraph.split())
-  # The first actual botanical paragraph, not shop navigation, a field table or sales copy.
   if len(line)<45 or RETAIL.search(line) or END.search(line):continue
   if LABELLED.match(line) or not BOTANICAL_PROSE.search(line):continue
   return line[:650].rstrip()
@@ -277,41 +183,36 @@ def polish_first_paragraph(paragraphs):
 def botanical_text(html_text,name):
  parser=DescriptionText();parser.feed(html_text)
  lines=parser.lines()
- # Prefer labelled botanical field block; generic commercial metadata is ignored.
  start=next((i for i,line in enumerate(lines) if re.match(r'(?i)^rodzina\s*:',line)),None)
  if start is None:
   start=next((i for i,line in enumerate(lines) if re.match(r'(?i)^(stanowisko|wysokość|kwitnienie)\s*:',line)),None)
- if start is None:return {},''
- fields={};body=[]
+ if start is None:return {},polish_first_paragraph(parser.paragraphs)
+ fields={}
  for line in lines[start:start+75]:
   if END.search(line) or line.lower().startswith(('rośnie w doniczce','rosnie w doniczce')):break
-  m=re.match(r'^([^:]{2,42}):\s*(.{1,400})$',line)
+  m=LABELLED.match(line)
   if m:
    key=FIELD_MAP.get(m.group(1).lower().strip())
    if key and key not in fields and not RETAIL.search(m.group(1)):
     val=convert_field(key,m.group(2).strip())
     if val is not None:fields[key]=val
-   continue
-  if RETAIL.search(line) or line.strip()==name or len(line)<35:continue
-  if re.search(r'(?i)(kwit|liści|kwiat|roślin|bylin|papro|pokrój|podłoż|mroz|cieni|słonec|wilgot|gleb)',line):
-   body.append(line)
-   if sum(map(len,body))>480:break
- return fields,' '.join(body)[:650]
+ return fields,polish_first_paragraph(parser.paragraphs)
 
 def detail(item):
  html_page=fetch(item['source_url'])
- s=Scan();s.feed(html_page)
- meta=s.meta
- name=title(meta.get('og:title') or ' '.join(s.head)) or item['botanical_name']
+ scan=Scan();scan.feed(html_page)
+ meta=scan.meta
+ name=title(meta.get('og:title') or ' '.join(scan.head)) or item['botanical_name']
  traits,body=botanical_text(html_page,name)
- description=body or ' '.join(html.unescape(meta.get('og:description') or meta.get('description') or '').split())[:480]
- # Shop metadata often contains pricing and delivery details: do not emit it as botanical description.
- if RETAIL.search(description) and not body:description=''
+ description=body
+ if not description:
+  summary=' '.join(html.unescape(meta.get('og:description') or meta.get('description') or '').split())
+  description=polish_first_paragraph([summary])
  record={'id':identifier(name),'botanical_name':name,'description':description,'traits':traits,
          'source_url':item['source_url'],'source':'sadzawka.pl',
          'sadzawka_category':item['category'],'data_quality':'product_page_auto_extracted_unreviewed',
          'trait_source_url':item['source_url'],'trait_quality':'auto_extracted_requires_review',
-         'growth_3_5_10_years':None}
+         'description_language':'pl','growth_3_5_10_years':None}
  img=safe(urljoin(item['source_url'],meta.get('og:image',''))) if meta.get('og:image') else ''
  if img and re.search(r'\.(?:jpe?g|png|webp)$',urlparse(img).path,re.I):
   record['image']={'url':img,'source_url':item['source_url'],'status':'meta_unverified'}
