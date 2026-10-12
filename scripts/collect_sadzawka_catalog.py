@@ -103,11 +103,95 @@ def identifier(name):
  base=re.sub(r'[^a-z0-9]+','-',base).strip('-')
  return base or 'unnamed-plant'
 
+class DescriptionText(HTMLParser):
+ def __init__(self):
+  super().__init__(convert_charrefs=True)
+  self.parts=[]
+ def handle_starttag(self,tag,attrs):
+  if tag in ('p','div','br','li','h1','h2','h3','h4','tr','dt','dd'):
+   self.parts.append('\n')
+ def handle_endtag(self,tag):
+  if tag in ('p','div','li','h1','h2','h3','h4','tr','dt','dd'):
+   self.parts.append('\n')
+ def handle_data(self,data):
+  self.parts.append(data)
+ def lines(self):
+  return [' '.join(line.split()) for line in ''.join(self.parts).splitlines() if line.strip()]
+
+FIELD_MAP={
+ 'rodzina':'family','stanowisko':'light','nasłonecznienie':'light',
+ 'wysokość':'height_cm_max','szerokość':'width_cm_max','średnica':'width_cm_max',
+ 'kwitnienie':'flowering','okres kwitnienia':'flowering',
+ 'gleba':'soil','podłoże':'soil','ziemia':'soil',
+ 'wilgotność':'moisture','wilgotność podłoża':'moisture',
+ 'mrozoodporność':'frost_resistance','strefa mrozoodporności':'hardiness_zone',
+ 'pokrój':'habit','liście':'foliage','ubarwienie kwiatów':'flower_color',
+ 'kolor kwiatów':'flower_color','barwa kwiatów':'flower_color',
+ 'pochodzenie':'origin','zapach':'fragrance'
+}
+RETAIL=re.compile(r'(?i)\b(cena|producent|hodowca|donicz|pojemnik|kod produktu|dostępność|szt\.|koszyk|zł)\b')
+END=re.compile(r'(?i)^(opinie|zapytaj o produkt|poleć znajomemu|newsletter|koszyk|dodaj opinię)\b')
+MONTHS={'I':1,'II':2,'III':3,'IV':4,'V':5,'VI':6,'VII':7,'VIII':8,'IX':9,'X':10,'XI':11,'XII':12}
+MONTH_RU=['','январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь']
+
+def convert_field(key,value):
+ if key in ('height_cm_max','width_cm_max'):
+  m=re.search(r'(\d+(?:[.,]\d+)?)\s*(cm|m)\b',value,re.I)
+  if not m:return None
+  n=float(m.group(1).replace(',','.'))*(100 if m.group(2).lower()=='m' else 1)
+  return round(n) if n.is_integer() else round(n,1)
+ if key=='flowering':
+  m=re.search(r'\b(I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\s*[-–—]\s*(I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\b',value,re.I)
+  if m:
+   a,b=(MONTHS[m.group(1).upper()],MONTHS[m.group(2).upper()])
+   return MONTH_RU[a]+' — '+MONTH_RU[b]
+ if key=='light':
+  v=value.lower()
+  if 'półcien' in v or 'półcień' in v: 
+   if 'słonecz' in v:return 'солнце или полутень'
+   return 'полутень'
+  if 'cienist' in v or 'cień' in v:return 'тень'
+  if 'słonecz' in v:return 'солнце'
+ return value[:220]
+
+def botanical_text(html_text,name):
+ parser=DescriptionText();parser.feed(html_text)
+ lines=parser.lines()
+ # Prefer labelled botanical field block; generic commercial metadata is ignored.
+ start=next((i for i,line in enumerate(lines) if re.match(r'(?i)^rodzina\s*:',line)),None)
+ if start is None:
+  start=next((i for i,line in enumerate(lines) if re.match(r'(?i)^(stanowisko|wysokość|kwitnienie)\s*:',line)),None)
+ if start is None:return {},''
+ fields={};body=[]
+ for line in lines[start:start+75]:
+  if END.search(line) or line.lower().startswith(('rośnie w doniczce','rosnie w doniczce')):break
+  m=re.match(r'^([^:]{2,42}):\s*(.{1,400})$',line)
+  if m:
+   key=FIELD_MAP.get(m.group(1).lower().strip())
+   if key and key not in fields and not RETAIL.search(m.group(1)):
+    val=convert_field(key,m.group(2).strip())
+    if val is not None:fields[key]=val
+   continue
+  if RETAIL.search(line) or line.strip()==name or len(line)<35:continue
+  if re.search(r'(?i)(kwit|liści|kwiat|roślin|bylin|papro|pokrój|podłoż|mroz|cieni|słonec|wilgot|gleb)',line):
+   body.append(line)
+   if sum(map(len,body))>480:break
+ return fields,' '.join(body)[:650]
+
 def detail(item):
- s=Scan();s.feed(fetch(item['source_url']))
- meta=s.meta;name=title(meta.get('og:title') or ' '.join(s.head)) or item['botanical_name']
- description=' '.join(html.unescape(meta.get('og:description') or meta.get('description') or '').split())[:800]
- record={'id':identifier(name),'botanical_name':name,'description':description,'traits':{},'source_url':item['source_url'],'source':'sadzawka.pl','sadzawka_category':item['category'],'data_quality':'product_metadata_unreviewed','trait_quality':'not_extracted'}
+ html_page=fetch(item['source_url'])
+ s=Scan();s.feed(html_page)
+ meta=s.meta
+ name=title(meta.get('og:title') or ' '.join(s.head)) or item['botanical_name']
+ traits,body=botanical_text(html_page,name)
+ description=body or ' '.join(html.unescape(meta.get('og:description') or meta.get('description') or '').split())[:480]
+ # Shop metadata often contains pricing and delivery details: do not emit it as botanical description.
+ if RETAIL.search(description) and not body:description=''
+ record={'id':identifier(name),'botanical_name':name,'description':description,'traits':traits,
+         'source_url':item['source_url'],'source':'sadzawka.pl',
+         'sadzawka_category':item['category'],'data_quality':'product_page_auto_extracted_unreviewed',
+         'trait_source_url':item['source_url'],'trait_quality':'auto_extracted_requires_review',
+         'growth_3_5_10_years':None}
  img=safe(urljoin(item['source_url'],meta.get('og:image',''))) if meta.get('og:image') else ''
  if img and re.search(r'\.(?:jpe?g|png|webp)$',urlparse(img).path,re.I):
   record['image']={'url':img,'source_url':item['source_url'],'status':'meta_unverified'}
