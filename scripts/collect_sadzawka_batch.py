@@ -18,10 +18,10 @@ QUEUE=ROOT/'catalog/exports/sadzawka-catalog-queue.json'
 FIRST_GROUPS=('Bodziszki','Hosty','Paprocie','Piwonie')
 BULK=re.compile(r'(?i)\b(?:\d+\s*(?:szt(?:uk)?|sadzonek|pack|pakiet)|zestaw|komplet|kolekcja|mix|mieszanka)\b')
 GENERA={
-    'Bodziszki':re.compile(r'^Geranium\\b',re.I),
-    'Hosty':re.compile(r'^Hosta\\b',re.I),
-    'Paprocie':re.compile(r'^(?:Adiantum|Asplenium|Arachniodes|Athyrium|Blechnum|Cyrtomium|Dryopteris|Polystichum|Polypodium|Osmunda|Matteuccia|Pteridium|Thelypteris|Onoclea|Woodsia|Cystopteris|Gymnocarpium|Phyllitis|Woodwardia|Osmundastrum|Deparia|Cheilanthes|Pellaea|Polypodiodes|Dennstaedtia|Diplazium|Cryptogramma)\\b',re.I),
-    'Piwonie':re.compile(r'^Paeonia\\b',re.I),
+    'Bodziszki':re.compile(r'^Geranium\b',re.I),
+    'Hosty':re.compile(r'^Hosta\b',re.I),
+    'Paprocie':re.compile(r'^(?:Adiantum|Asplenium|Arachniodes|Athyrium|Blechnum|Cyrtomium|Dryopteris|Polystichum|Polypodium|Osmunda|Matteuccia|Pteridium|Thelypteris|Onoclea|Woodsia|Cystopteris|Gymnocarpium|Phyllitis|Woodwardia|Osmundastrum|Deparia|Cheilanthes|Pellaea|Polypodiodes|Dennstaedtia|Diplazium|Cryptogramma)\b',re.I),
+    'Piwonie':re.compile(r'^Paeonia\b',re.I),
 }
 EXCLUDED_PAGE=re.compile(r'(?i)(?:/(?:pl/c|category|kategoria|collections?)/|(?:lilie[-_ ]?wodne|rosliny[-_ ]?cieniolubne|podpory|akcesoria))')
 PAGENO=re.compile(r'^\s*(?:\d{1,3}|następna|dalej|next|»|›)\s*$',re.I)
@@ -102,7 +102,7 @@ def parse_category(html_text,url,base,category=None):
         if not href:continue
         label=link['label']
         name=core.title(label)
-        if link['product'] and name and not BULK.search(label) and (category is None or GENERA.get(category,re.compile(r'(?!)')).search(name)):
+        if link['product'] and name and not BULK.search(label) and (category is None or (category in GENERA and GENERA[category].search(name))):
             # Do not interpret pagination/category links as plant pages.
             if not EXCLUDED_PAGE.search(urlparse(href).path) and href!=url:
                 product=core.safe(href)
@@ -123,13 +123,14 @@ def initial_state(groups):
 def collect(state,review,limit=100,page_limit=45,delay=1.3,fetcher=core.fetch):
     if state['groups']!=review.get('groups'):raise ValueError('State and review group mismatch')
     migrate_checkpoint(state)
-    known={item['source_url'] for item in state['pending']+state['completed']}
+    known={item['source_url'] for item in state['pending']+state['completed']} | {item['url'] for item in state['failed']}
     seen={core.normal(rec.get('botanical_name')) for rec in review['records']}
     # Existing live cards should not be recrawled or duplicated in staged output.
     if core.LIVE.exists():
         known_names={core.normal(rec.get('botanical_name')) for rec in core.load(core.LIVE,{'records':[]})['records']}
     else:known_names=set()
     pages_done=0
+    progress_printed=-1
     while (state['pending'] or state['pages']) and len(review['records'])<limit:
         if not state['pending'] and state['pages']:
             if pages_done>=page_limit:break
@@ -171,7 +172,8 @@ def collect(state,review,limit=100,page_limit=45,delay=1.3,fetcher=core.fetch):
         except Exception as exc:
             failed(state,item['source_url'],item['category'],exc,'network' if transient(exc) else 'product_parse')
             state['completed'].append({**item,'status':'failed'})
-        if len(state['completed'])%10==0:
+        if len(state['completed'])%10==0 and len(state['completed'])!=progress_printed:
+            progress_printed=len(state['completed'])
             print(json.dumps({'progress':len(state['completed']),'saved':len(review['records']),
                               'failed':len(state['failed']),'incomplete':len(state['incomplete'])},ensure_ascii=False),flush=True)
         if delay:time.sleep(delay)
