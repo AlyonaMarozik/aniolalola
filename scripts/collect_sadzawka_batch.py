@@ -4,6 +4,9 @@ import argparse
 import json
 import re
 import time
+import ssl
+import socket
+from urllib.error import HTTPError, URLError
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, urlunparse
@@ -12,8 +15,16 @@ import collect_sadzawka_catalog as core
 ROOT=Path(__file__).resolve().parents[1]
 OUTPUT=ROOT/'catalog/exports/sadzawka-catalog-review.json'
 QUEUE=ROOT/'catalog/exports/sadzawka-catalog-queue.json'
+FAILED=ROOT/'catalog/exports/sadzawka-catalog-failed.json'
 FIRST_GROUPS=('Bodziszki','Hosty','Paprocie','Piwonie')
 BULK=re.compile(r'(?i)\b(?:\d+\s*(?:szt(?:uk)?|sadzonek|pack|pakiet)|zestaw|komplet|kolekcja|mix|mieszanka)\b')
+GENERA={
+    'Bodziszki':re.compile(r'^Geranium\b',re.I),
+    'Hosty':re.compile(r'^Hosta\b',re.I),
+    'Paprocie':re.compile(r'^(?:Adiantum|Asplenium|Arachniodes|Athyrium|Blechnum|Cyrtomium|Dryopteris|Polystichum|Polypodium|Osmunda|Matteuccia|Pteridium|Thelypteris|Onoclea|Woodsia|Cystopteris|Gymnocarpium|Phyllitis|Woodwardia|Osmundastrum|Deparia|Cheilanthes|Pellaea|Polypodiodes|Dennstaedtia|Diplazium|Cryptogramma)\b',re.I),
+    'Piwonie':re.compile(r'^Paeonia\b',re.I),
+}
+EXCLUDED_PAGE=re.compile(r'(?i)(?:/(?:pl/c|category|kategoria|collections?)/|(?:lilie[-_ ]?wodne|rosliny[-_ ]?cieniolubne|podpory|akcesoria))')
 PAGENO=re.compile(r'^\s*(?:\d{1,3}|następna|dalej|next|»|›)\s*$',re.I)
 
 class Links(HTMLParser):
@@ -44,7 +55,46 @@ def page_url(link,base):
     if parsed.scheme!='https' or parsed.hostname not in core.HOSTS:return ''
     return urlunparse((parsed.scheme,parsed.netloc,parsed.path,'',parsed.query,''))
 
-def parse_category(html_text,url,base):
+def transient(exc):
+    if isinstance(exc, HTTPError):
+        return exc.code==429 or 500<=exc.code<=599
+    return isinstance(exc,(URLError,TimeoutError,socket.timeout,ConnectionError,ssl.SSLError,ConnectionResetError))
+
+def once_retry(operation,delay=1.3):
+    # One initial attempt plus exactly ONE retry for transient transport failures.
+    try:return operation()
+    except Exception as exc:
+        if not transient(exc):raise
+        if delay:time.sleep(delay)
+        return operation()
+
+def failed(state,url,category,reason,kind='network'):
+    entry={'url':url,'category':category,'status':'failed','kind':kind,'error':str(reason)[:250]}
+    if not any(item['url']==url for item in state['failed']):
+        state['failed'].append(entry)
+    return entry
+
+def migrate_checkpoint(state):
+    # Convert previous-run error entries to a durable manual-review list.
+    state.setdefault('failed',[])
+    state.setdefault('incomplete',[])
+    existing_errors={x.get('url'):x.get('error','unknown error') for x in state.get('errors',[])}
+    for item in state.get('completed',[]):
+        if item.get('status')=='error':
+            item['status']='failed'
+            failed(state,item['source_url'],item.get('category',''),existing_errors.get(item['source_url'],'legacy error'))
+        elif item.get('status')=='incomplete':
+            if not any(x['url']==item['source_url'] for x in state['incomplete']):
+                state['incomplete'].append({'url':item['source_url'],'category':item.get('category',''),'status':'incomplete','reason':existing_errors.get(item['source_url'],'missing required fields')})
+    # Previously failed category pages used to be requeued; remove those once
+    # transferred to the manual-review list instead of retrying indefinitely.
+    for item in state.get('category_errors',[]):
+        failed(state,item['url'],next((p['category'] for p in state.get('pages',[]) if p['url']==item['url']),''),item.get('error','legacy category error'))
+    failed_pages={x['url'] for x in state['failed']}
+    state['pages']=[p for p in state.get('pages',[]) if p['url'] not in failed_pages]
+    return state
+
+def parse_category(html_text,url,base,category=None):
     parser=Links();parser.feed(html_text)
     candidates=[];pages=[]
     basepath=urlparse(base).path.rstrip('/')
@@ -53,9 +103,9 @@ def parse_category(html_text,url,base):
         if not href:continue
         label=link['label']
         name=core.title(label)
-        if link['product'] and name and not BULK.search(label):
+        if link['product'] and name and not BULK.search(label) and (category is None or (category in GENERA and GENERA[category].search(name))):
             # Do not interpret pagination/category links as plant pages.
-            if not urlparse(href).path.startswith('/pl/c/') and href!=url:
+            if not EXCLUDED_PAGE.search(urlparse(href).path) and href!=url:
                 product=core.safe(href)
                 if product:candidates.append({'botanical_name':name,'source_url':product})
         if PAGENO.match(label) or link.get('rel')=='next':
@@ -68,25 +118,27 @@ def parse_category(html_text,url,base):
 def initial_state(groups):
     return {'schema_version':1,'groups':list(groups),
             'pages':[{'category':cat,'base':core.CATEGORIES[cat],'url':core.CATEGORIES[cat]} for cat in groups],
-            'visited_pages':[],'pending':[],'completed':[],'errors':[],'category_errors':[],
+            'visited_pages':[],'pending':[],'completed':[],'errors':[],'category_errors':[],'failed':[],'incomplete':[],
             'stats':{}}
 
 def collect(state,review,limit=100,page_limit=45,delay=1.3,fetcher=core.fetch):
     if state['groups']!=review.get('groups'):raise ValueError('State and review group mismatch')
-    known={item['source_url'] for item in state['pending']+state['completed']}
+    migrate_checkpoint(state)
+    known={item['source_url'] for item in state['pending']+state['completed']} | {item['url'] for item in state['failed']}
     seen={core.normal(rec.get('botanical_name')) for rec in review['records']}
     # Existing live cards should not be recrawled or duplicated in staged output.
     if core.LIVE.exists():
         known_names={core.normal(rec.get('botanical_name')) for rec in core.load(core.LIVE,{'records':[]})['records']}
     else:known_names=set()
     pages_done=0
+    progress_printed=-1
     while (state['pending'] or state['pages']) and len(review['records'])<limit:
         if not state['pending'] and state['pages']:
             if pages_done>=page_limit:break
             current=state['pages'].pop(0)
             if current['url'] in state['visited_pages']:continue
             try:
-                plants,more=parse_category(fetcher(current['url']),current['url'],current['base'])
+                plants,more=parse_category(once_retry(lambda:fetcher(current['url']),delay),current['url'],current['base'],current['category'])
                 for item in plants:
                     if item['source_url'] not in known:
                         item['category']=current['category']
@@ -98,34 +150,40 @@ def collect(state,review,limit=100,page_limit=45,delay=1.3,fetcher=core.fetch):
                 state['visited_pages'].append(current['url'])
             except Exception as exc:
                 state['category_errors'].append({'url':current['url'],'error':str(exc)[:180]})
-                # Unsuccessful pages remain retryable on a subsequent batch, not silently completed.
-                state['pages'].append(current)
+                failed(state,current['url'],current['category'],exc,'network' if transient(exc) else 'category_parse')
+                # Do not stop the queue or retry this page automatically.
                 pages_done+=1
-                break
+                continue
             pages_done+=1
             if delay:time.sleep(delay)
             continue
         item=state['pending'].pop(0)
         try:
-            rec=core.detail(item)
+            rec=once_retry(lambda:core.detail(item),delay)
             key=core.normal(rec['botanical_name'])
             if not key or key in seen or key in known_names:
                 state['completed'].append({**item,'status':'duplicate'})
             elif not rec.get('description') or not rec.get('traits'):
-                state['errors'].append({'url':item['source_url'],'error':'missing description or traits'})
+                state['incomplete'].append({'url':item['source_url'],'category':item['category'],'status':'incomplete','reason':'missing description or traits'})
                 state['completed'].append({**item,'status':'incomplete'})
             else:
                 review['records'].append(rec)
                 seen.add(key)
                 state['completed'].append({**item,'status':'saved'})
         except Exception as exc:
-            state['errors'].append({'url':item['source_url'],'error':str(exc)[:180]})
-            state['completed'].append({**item,'status':'error'})
+            failed(state,item['source_url'],item['category'],exc,'network' if transient(exc) else 'product_parse')
+            state['completed'].append({**item,'status':'failed'})
+        if len(state['completed'])%10==0 and len(state['completed'])!=progress_printed:
+            progress_printed=len(state['completed'])
+            print(json.dumps({'progress':len(state['completed']),'saved':len(review['records']),
+                              'failed':len(state['failed']),'incomplete':len(state['incomplete'])},ensure_ascii=False),flush=True)
         if delay:time.sleep(delay)
     state['stats']={'attempted_total':len(state['completed']),'records_total':len(review['records']),
                     'queued':len(state['pending']),'pages_pending':len(state['pages']),
                     'pages_visited':len(state['visited_pages']),'errors':len(state['errors']),
-                    'category_errors':len(state['category_errors'])}
+                    'category_errors':len(state['category_errors']),
+                    'failed':len(state['failed']),'incomplete':len(state['incomplete']),
+                    'saved_by_category':{cat:sum(r.get('sadzawka_category')==cat for r in review['records']) for cat in state['groups']}}
     return state,review
 
 def main():
@@ -152,5 +210,6 @@ def main():
     OUTPUT.parent.mkdir(parents=True,exist_ok=True)
     OUTPUT.write_text(json.dumps(review,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     QUEUE.write_text(json.dumps(state,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    FAILED.write_text(json.dumps({'source':'sadzawka.pl','items':state['failed'],'incomplete':state['incomplete']},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(state['stats'],ensure_ascii=False))
 if __name__=='__main__':main()
