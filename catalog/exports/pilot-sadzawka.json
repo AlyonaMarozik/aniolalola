@@ -76,10 +76,10 @@
     {
       "id": "cyrtomium-fortunei-clivicola",
       "botanical_name": "Cyrtomium fortunei 'Clivicola'",
-      "description": "Вечнозелёный папоротник с кожистыми светло-зелёными листьями, формирует крупные куртины.",
+      "description": "Вечнозелёный папоротник Clivicola с плотными куртинами кожистых, блестящих светло-зелёных вай; по описанию Florosfera более морозостоек, чем типичный Cyrtomium fortunei.",
       "traits": {
         "evergreen": true,
-        "habit": "крупные куртины",
+        "habit": "компактная плотная куртина",
         "container_suitable": true,
         "foliage_type": "вечнозелёное",
         "family": "Dryopteridaceae",
@@ -87,21 +87,28 @@
         "hardiness_zone": 6,
         "leaf_length_cm": 70,
         "leaf_width_cm": 20,
-        "light": "тень",
+        "light": "тень или полутень, защищённое от ветра место",
         "moisture": "переносит подсыхание",
-        "growth": "быстрее типичного вида (по Sadzawka)"
+        "growth": "быстрее типичного вида (по Sadzawka)",
+        "height_cm_min": 40,
+        "height_cm_max": 60,
+        "width_cm_max": 50,
+        "soil": "гумусная, плодородная, проницаемая, умеренно влажная",
+        "foliage": "вечнозелёная",
+        "frost_resistance": "очень высокая (классификация Florosfera); молодые растения защищать в бесснежные морозы",
+        "recommended_uses": "тенистый сад, японский сад, контейнеры"
       },
-      "source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna",
-      "source": "sadzawka.pl",
+      "source_url": "https://florosfera.pl/Paprotnik-Fortunea-Clivicola-Cyrtomium-fortunei",
+      "source": "Florosfera.pl",
       "image": {
         "url": "https://sadzawka.pl/environment/cache/images/productGfx_4388_500_500/Cyrtomium-fortunei-%E2%80%9EClivicola.jpg?overlay=1",
         "status": "extracted_from_product_page_unverified_hotlink",
         "source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna"
       },
-      "data_quality": "partial_source_verified",
+      "data_quality": "exact_cultivar_florosfera_traits_verified_existing_photo_preserved",
       "growth_3_5_10_years": null,
-      "trait_source_url": "https://sadzawka.pl/Cyrtomium_fortunei_Clivicola-Paprotnik_Fortuna",
-      "trait_quality": "source_page_checked_2026_10_11"
+      "trait_source_url": "https://florosfera.pl/Paprotnik-Fortunea-Clivicola-Cyrtomium-fortunei",
+      "trait_quality": "exact_cultivar_product_page_read_2026_10_12"
     },
     {
       "id": "asplenium-trichomanes",
