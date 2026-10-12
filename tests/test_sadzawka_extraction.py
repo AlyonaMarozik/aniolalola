@@ -34,6 +34,19 @@ class ExtractorTests(unittest.TestCase):
         self.assertNotIn("soil", traits)
         self.assertNotIn("moisture", traits)
         self.assertNotIn("width_cm_max", traits)
+    def test_polish_first_paragraph_preserved(self):
+        traits, desc = mod.botanical_text(SAMPLE, 'Geranium wallichianum Kelly-Anne')
+        self.assertEqual(desc, "Ten niski bodziszek o różowych kwiatach to bylina. Kwitnie długo i jest mrozoodporny.")
+        self.assertNotIn("hodowca", desc.lower())
+    def test_paragraph_without_labelled_fields(self):
+        raw = '<div><p>Hosta Blue Mouse Ears</p><p>Ta niewielka roślina o niebieskawych liściach tworzy gęste kępy w ogrodzie.</p></div>'
+        traits, desc = mod.botanical_text(raw, 'Hosta Blue Mouse Ears')
+        self.assertEqual(traits, {})
+        self.assertTrue(desc.startswith('Ta niewielka roślina'))
+    def test_retail_paragraph_skipped(self):
+        raw = '<p>Roślina dostępna w doniczce P11, dodaj do koszyka i zamów.</p><p>Ta piękna bylina kwitnie długo w ogrodzie i tworzy szerokie kępy.</p>'
+        self.assertIn('bylina', mod.botanical_text(raw, 'Plant')[1])
+        self.assertNotIn('P11', mod.botanical_text(raw, 'Plant')[1])
     def test_meters_conversion(self):
         self.assertEqual(mod.convert_field("height_cm_max", "1,2 m"), 120)
         self.assertEqual(mod.convert_field("width_cm_max", "45 cm"), 45)
