@@ -93,4 +93,4 @@ svg.addEventListener('pointerdown',e=>{svg.setPointerCapture(e.pointerId);touche
 svg.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;const old=touches.get(e.pointerId);touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(touches.size===1){view.x-=(e.clientX-old.x)/svg.clientWidth*view.w;view.y-=(e.clientY-old.y)/svg.clientHeight*view.h;apply()}else if(touches.size===2){let a=[...touches.values()];if(gesture){let d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);zoom(gesture.distance/d,gesture.center.x,gesture.center.y)}const d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);gesture={distance:d,center:point({clientX:(a[0].x+a[1].x)/2,clientY:(a[0].y+a[1].y)/2})}}});
 function end(e){touches.delete(e.pointerId);gesture=null}svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
 select('B19');fit();
-</script><script src="garden-assessment/app.js?v=20261012-label13"></script></body></html>
+</script><script src="garden-assessment/app.js?v=20261012-wordwrap"></script></body></html>
