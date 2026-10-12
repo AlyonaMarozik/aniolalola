@@ -80,7 +80,7 @@ def collect(state,review,limit=100,page_limit=45,delay=1.3,fetcher=core.fetch):
         known_names={core.normal(rec.get('botanical_name')) for rec in core.load(core.LIVE,{'records':[]})['records']}
     else:known_names=set()
     pages_done=0
-    while (state['pending'] or state['pages']) and len(state['completed'])<limit:
+    while (state['pending'] or state['pages']) and len(review['records'])<limit:
         if not state['pending'] and state['pages']:
             if pages_done>=page_limit:break
             current=state['pages'].pop(0)
