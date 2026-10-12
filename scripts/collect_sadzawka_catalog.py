@@ -172,7 +172,7 @@ def convert_field(key,value):
 BOTANICAL_PROSE=re.compile(r'(?i)(roślin|bylin|kwiat|liści|liść|pęd|papro|pokrój|kwit|ogr[oó]d|odmian|gleb|wilgot|cieni|słonec|mroz|wysokość)')
 LABELLED=re.compile(r'^([^:]{2,42}):\s*(.{1,400})$')
 
-PARAM_LABELS=re.compile(r'(?i)(?:rodzina|hodowca|stanowisko|nasłonecznienie|wysokość|szerokość|kwitnienie|gleba|podłoże|wilgotność|mrozoodporność)\\s*:')
+PARAM_LABELS=re.compile(r'(?i)(?:rodzina|hodowca|stanowisko|nasłonecznienie|wysokość|szerokość|kwitnienie|gleba|podłoże|wilgotność|mrozoodporność)\s*:')
 
 def polish_first_paragraph(paragraphs):
  for paragraph in paragraphs:
