@@ -2,12 +2,11 @@
 """Collect direct remote Sadzawka image URLs, one plant per iteration.
 
 Never downloads/stores photos, never guesses filenames, never overwrites existing URLs.
-Run: python scripts/collect_sadzawka_photos.py
+Run: python scripts/collect_sadzawka_photos.py --limit 1
 """
 import json
 import argparse
 import re
-import sys
 import time
 from html.parser import HTMLParser
 from pathlib import Path
@@ -19,12 +18,15 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/exports/pilot-sadzawka.json"
 LOG = ROOT / "catalog/exports/photo-collection-log.json"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; GardenCatalogPhotoCollector/1.0)"}
-IMAGE_RE = re.compile(r"\\.(?:jpe?g|png|webp)(?:[?#]|$)", re.I)
+IMAGE_RE = re.compile(r"\.(?:jpe?g|png|webp)(?:[?#]|$)", re.I)
+SADZAWKA_HOSTS = ("sadzawka.pl", "www.sadzawka.pl")
+
 
 class Images(HTMLParser):
     def __init__(self):
         super().__init__()
         self.candidates = []
+
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == "meta" and (a.get("property") in ("og:image", "og:image:secure_url") or a.get("name") == "twitter:image"):
@@ -36,9 +38,11 @@ class Images(HTMLParser):
             if a.get("srcset"):
                 self.candidates.extend(("img", part.strip().split(" ")[0]) for part in a["srcset"].split(","))
 
+
 def request(url, method="GET"):
     req = Request(url, headers=HEADERS, method=method)
     return urlopen(req, timeout=20)
+
 
 def valid_image(url):
     try:
@@ -53,6 +57,7 @@ def valid_image(url):
     except (HTTPError, URLError, TimeoutError, OSError):
         return False
 
+
 def candidates(html, page):
     parser = Images()
     parser.feed(html)
@@ -60,7 +65,7 @@ def candidates(html, page):
     for kind, raw in parser.candidates:
         url = urljoin(page, raw.strip())
         parsed = urlparse(url)
-        if parsed.scheme != "https" or parsed.netloc not in ("sadzawka.pl", "www.sadzawka.pl"):
+        if parsed.scheme != "https" or parsed.netloc not in SADZAWKA_HOSTS:
             continue
         if not IMAGE_RE.search(parsed.path) and "/environment/cache/images/" not in parsed.path:
             continue
@@ -72,10 +77,13 @@ def candidates(html, page):
             seen.add(url)
             yield url
 
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--limit", type=int, default=0, help="Maximum number of missing-photo cards to process (0=all)")
+    parser.add_argument("--limit", type=int, default=0, help="Maximum number of missing Sadzawka photos to process (0=all)")
     args = parser.parse_args()
+    if args.limit < 0:
+        parser.error("--limit cannot be negative")
     doc = json.loads(CATALOG.read_text(encoding="utf-8"))
     results = []
     changed = 0
@@ -83,18 +91,20 @@ def main():
     for item in doc["records"]:
         if item.get("image", {}).get("url"):
             continue
-        if args.limit and processed >= args.limit:\n            break\n        processed += 1\n        name = item["botanical_name"]
         page = item.get("source_url")
+        if urlparse(page or "").netloc not in SADZAWKA_HOSTS:
+            continue
+        if args.limit and processed >= args.limit:
+            break
+        processed += 1
+        name = item["botanical_name"]
         entry = {"id": item["id"], "name": name, "source_url": page}
         try:
-            if not page or urlparse(page).netloc not in ("sadzawka.pl", "www.sadzawka.pl"):
-                raise ValueError("No valid Sadzawka source URL")
             with request(page) as response:
                 html = response.read().decode("utf-8", "replace")
             options = list(candidates(html, page))
             entry["candidates"] = len(options)
-            # The page may contain related products; prefer product-specific meta images.
-            # If no og:image, a single product image candidate is needed to avoid wrong cultivar photos.
+            # Prefer the product-specific meta image over related product images.
             meta_parser = Images()
             meta_parser.feed(html)
             metas = {urljoin(page, raw) for kind, raw in meta_parser.candidates if kind == "meta"}
@@ -129,6 +139,7 @@ def main():
     if changed:
         CATALOG.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Added {changed} verified remote photo URLs. See {LOG.relative_to(ROOT)}")
+
 
 if __name__ == "__main__":
     main()
