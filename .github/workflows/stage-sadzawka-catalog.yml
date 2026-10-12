@@ -3,6 +3,10 @@ name: Collect Sadzawka botanical catalog for review
 on:
   workflow_dispatch:
     inputs:
+      test_url:
+        description: 'Optional exact Sadzawka product URL; overrides category collection'
+        required: false
+        default: ''
       limit:
         description: 'Maximum product detail pages to collect into local JSON (1-200)'
         required: true
@@ -31,7 +35,15 @@ jobs:
       - name: Check botanical extraction regressions
         run: python -m unittest discover -s tests -p 'test_sadzawka_extraction.py'
       - name: Collect into local JSON only
-        run: python scripts/collect_sadzawka_catalog.py --limit "${{ inputs.limit }}"
+        env:
+          TEST_URL: ${{ inputs.test_url }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          if [ -n "$TEST_URL" ]; then
+            python scripts/collect_sadzawka_catalog.py --test-url "$TEST_URL"
+          else
+            python scripts/collect_sadzawka_catalog.py --limit "$LIMIT"
+          fi
       - name: Upload review JSON without committing to GitHub
         if: always()
         uses: actions/upload-artifact@v4
