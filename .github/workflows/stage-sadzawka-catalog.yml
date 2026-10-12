@@ -28,6 +28,8 @@ jobs:
           python-version: '3.12'
       - name: Validate Python syntax
         run: python -m py_compile scripts/collect_sadzawka_catalog.py
+      - name: Check botanical extraction regressions
+        run: python -m unittest discover -s tests -p 'test_sadzawka_extraction.py'
       - name: Collect into local JSON only
         run: python scripts/collect_sadzawka_catalog.py --limit "${{ inputs.limit }}"
       - name: Upload review JSON without committing to GitHub
