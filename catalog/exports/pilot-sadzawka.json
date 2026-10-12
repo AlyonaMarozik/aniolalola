@@ -1018,11 +1018,15 @@
       "source_url": "https://florosfera.pl/Obuwik-Cypripedium-kentuckiense-x-parviflorum",
       "source": "Florosfera.pl",
       "image": {
-        "url": null,
+        "url": "https://florosfera.pl/environment/cache/images/productGfx_412_350_350/Cypripedium-kentuckiense-x-parviflorum.jpg",
+        "alternate_urls": [
+          "https://florosfera.pl/environment/cache/images/productGfx_493_350_350/Cypripedium-kentuckiense-x-parviflorum.jpg",
+          "https://florosfera.pl/environment/cache/images/productGfx_495_350_350/Cypripedium-kentuckiense-x-parviflorum.jpg"
+        ],
         "source_url": "https://florosfera.pl/Obuwik-Cypripedium-kentuckiense-x-parviflorum",
-        "status": "product_gallery_present_direct_image_not_extracted"
+        "status": "exact_product_gallery_image_url_extracted_browser_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_florosfera_traits_verified_photo_pending",
+      "data_quality": "exact_product_traits_and_gallery_image_url_extracted",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://florosfera.pl/Obuwik-Cypripedium-kentuckiense-x-parviflorum",
       "trait_quality": "exact_taxon_product_page_read_2026_10_12"
