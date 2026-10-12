@@ -956,11 +956,12 @@
       "source_url": "https://sadzawka.pl/pl/c/B/111/1/full",
       "source": "Sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://sadzawka.pl/pl/c/B/111/1/full"
+        "url": "https://dancingoaks.com/cdn/shop/files/Bletilla_striata__Albostriata_1024x1024.png?v=1747425425",
+        "source_url": "https://dancingoaks.com/products/bletilla-striata-albostriata-chinese-ground-orchid",
+        "status": "representative_similar_white_margined_pink_flowered_Albostriata_not_verified_identical_to_Albomarginata",
+        "caption": "Иллюстрация близкой белоокаймлённой формы Bletilla striata ‘Albostriata’; точный сорт ‘Albomarginata’ на фото не подтверждён."
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_cultivar_traits_verified_representative_photo_not_exact_cultivar",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/pl/c/B/111/1/full",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
