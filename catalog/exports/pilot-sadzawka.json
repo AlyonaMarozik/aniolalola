@@ -138,9 +138,9 @@
       "image": {
         "url": "https://sadzawka.pl/userdata/public/gfx/da44192ffc91c35ef22a339b96dee6c1.jpg",
         "source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
-        "status": "source_page_link_extracted_unverified_delivery"
+        "status": "direct_image_link_extracted_from_exact_product_page_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_taxon_traits_verified_direct_photo_link_extracted_hotlink_unverified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
@@ -820,11 +820,11 @@
       "source_url": "https://sadzawka.pl/Epipactis_palustris-Kruszczyk_blotny",
       "source": "Sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://sadzawka.pl/Epipactis_palustris-Kruszczyk_blotny"
+        "url": "https://sadzawka.pl/userdata/public/gfx/becf9e4b8aad369d34c736456cf6d930.jpg",
+        "source_url": "https://sadzawka.pl/Epipactis_palustris-Kruszczyk_blotny",
+        "status": "direct_image_link_extracted_from_exact_product_page_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_taxon_traits_verified_direct_photo_link_extracted_hotlink_unverified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Epipactis_palustris-Kruszczyk_blotny",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
@@ -876,11 +876,11 @@
       "source_url": "https://sadzawka.pl/Leucojum_vernum-Sniezyca_wiosenna",
       "source": "Sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://sadzawka.pl/Leucojum_vernum-Sniezyca_wiosenna"
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_3b1b0b673d6ec710ce453f96ecae5479_500_500.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Leucojum_vernum-Sniezyca_wiosenna",
+        "status": "direct_image_link_extracted_from_exact_product_page_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_taxon_traits_verified_direct_photo_link_extracted_hotlink_unverified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Leucojum_vernum-Sniezyca_wiosenna",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
@@ -930,11 +930,11 @@
       "source_url": "https://sadzawka.pl/Cyclamen_coum_Silver_Leaf-Cyklamen_dyskowaty_srebrny",
       "source": "Sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://sadzawka.pl/Cyclamen_coum_Silver_Leaf-Cyklamen_dyskowaty_srebrny"
+        "url": "https://sadzawka.pl/userdata/public/gfx/31f64981b3fe60feb1beea65c2f89834.jpg",
+        "source_url": "https://sadzawka.pl/Cyclamen_coum_Silver_Leaf-Cyklamen_dyskowaty_srebrny",
+        "status": "direct_image_link_extracted_from_exact_product_page_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_taxon_traits_verified_direct_photo_link_extracted_hotlink_unverified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Cyclamen_coum_Silver_Leaf-Cyklamen_dyskowaty_srebrny",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
@@ -1194,11 +1194,11 @@
       "source_url": "https://e-katalogroslin.pl/plants/4582%2Cpieris-japonski-prelude_pieris-japonica-prelude",
       "source": "Związek Szkółkarzy Polskich",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://e-katalogroslin.pl/plants/4582%2Cpieris-japonski-prelude_pieris-japonica-prelude"
+        "url": "https://e-katalogroslin.pl/api/image.php?id=14469&size=sv",
+        "source_url": "https://e-katalogroslin.pl/plants/4582%2Cpieris-japonski-prelude_pieris-japonica-prelude",
+        "status": "direct_image_link_extracted_from_exact_product_page_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_taxon_traits_verified_direct_photo_link_extracted_hotlink_unverified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://e-katalogroslin.pl/plants/4582%2Cpieris-japonski-prelude_pieris-japonica-prelude",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
