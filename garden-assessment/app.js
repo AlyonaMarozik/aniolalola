@@ -30,13 +30,9 @@ function active(p){if(season==='all')return true;const mm=month===null?seasons[s
 function controls(id,items,value,fn){const el=$(id);el.replaceChildren();for(const [label,v] of items){const b=document.createElement('button');b.textContent=label;if(v===value)b.className='on';b.onclick=()=>fn(v);el.append(b)}}
 function draw(tag,attrs){const n=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);layer.append(n);return n}
 function labelLines(name){
-const raw=String(name||'').trim();
-const clipped=Array.from(raw).length>25?Array.from(raw).slice(0,24).join('').trimEnd()+'…':raw;
-if(clipped.length<=13)return[clipped];
-const middle=Math.ceil(clipped.length/2);
-const breaks=[...clipped.matchAll(/\s+/g)].map(m=>m.index).filter(i=>i>=5&&i<=18);
-const split=breaks.length?breaks.reduce((a,b)=>Math.abs(b-middle)<Math.abs(a-middle)?b:a):middle;
-return[clipped.slice(0,split).trim(),clipped.slice(split).trim()].filter(Boolean);
+const chars=Array.from(String(name||'').trim());
+const clipped=chars.length>25?[...chars.slice(0,24),'…']:chars;
+return [clipped.slice(0,13).join(''),clipped.slice(13,25).join('')].filter(Boolean);
 }
 function render(){
 controls('assessment-season',[['Все','all'],['Весна','spring'],['Лето','summer'],['Осень','autumn'],['Зима','winter']],season,v=>{season=v;month=null;render()});
