@@ -123,21 +123,26 @@ def main():
  # Repeated runs retain the queue and review records. Never alter the live catalog.
  for cat,base in CATEGORIES.items():
   if cat in q['category_pages']:continue
-  visited=set();pages=[base]
+  visited=set();pages=[base];failed=False;discovered=0
   while pages and len(visited)<args.pages_per_category:
    u=pages.pop(0)
    if u in visited:continue
    visited.add(u)
    try:
     items,more=category_page(u)
+    discovered+=len(items)
     for p in items:
      if p['source_url'] not in urls:
       p['category']=cat;q['pending'].append(p);urls.add(p['source_url'])
     for link in more:
      if link not in visited and link not in pages:pages.append(link)
-   except Exception as e:q['page_errors'].append({'category':cat,'url':u,'error':str(e)[:200]})
+   except Exception as e:
+    failed=True
+    q['page_errors'].append({'category':cat,'url':u,'error':str(e)[:200]})
    time.sleep(args.delay)
-  q['category_pages'][cat]=len(visited)
+  # Keep failed/empty/incomplete categories retryable rather than silently marking them done.
+  if not failed and not pages and discovered:
+   q['category_pages'][cat]=len(visited)
  processed=0;added=0
  while q['pending'] and processed<args.limit:
   item=q['pending'].pop(0);processed+=1
