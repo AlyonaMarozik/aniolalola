@@ -1,0 +1,73 @@
+name: Collect Sadzawka botanical batch
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Total saved review cards to reach (1-200)'
+        required: true
+        default: '100'
+      groups:
+        description: 'Comma-separated botanical departments; keep unchanged on resume'
+        required: true
+        default: 'Bodziszki,Hosty,Paprocie,Piwonie'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: sadzawka-batch-checkpoint
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate collector and regression tests
+        run: |
+          python -m py_compile scripts/collect_sadzawka_catalog.py scripts/collect_sadzawka_batch.py
+          python -m unittest discover -s tests -p 'test_sadzawka*.py'
+      - name: Restore latest batch checkpoint, if it exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p catalog/exports
+          checkpoint_run=$(gh api "repos/$REPO/actions/artifacts?name=sadzawka-batch-checkpoint&per_page=100" \
+            | jq -r --arg branch "$BRANCH" '[.artifacts[] | select(.expired == false and .workflow_run.head_branch == $branch) | .workflow_run.id] | first // empty')
+          if [ -n "$checkpoint_run" ]; then
+            echo "Restoring checkpoint from run $checkpoint_run"
+            mkdir -p /tmp/sadzawka-checkpoint
+            gh run download "$checkpoint_run" --repo "$REPO" --name sadzawka-batch-checkpoint --dir /tmp/sadzawka-checkpoint
+            test -s /tmp/sadzawka-checkpoint/sadzawka-catalog-review.json
+            test -s /tmp/sadzawka-checkpoint/sadzawka-catalog-queue.json
+            cp /tmp/sadzawka-checkpoint/sadzawka-catalog-review.json catalog/exports/
+            cp /tmp/sadzawka-checkpoint/sadzawka-catalog-queue.json catalog/exports/
+          else
+            echo "Starting first botanical batch without a checkpoint"
+          fi
+      - name: Collect up to target saved botanical cards
+        env:
+          TARGET: ${{ inputs.target }}
+          GROUPS: ${{ inputs.groups }}
+        run: |
+          python scripts/collect_sadzawka_batch.py --limit "$TARGET" --groups "$GROUPS"
+      - name: Upload checkpoint, no repository writes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sadzawka-batch-checkpoint
+          path: |
+            catalog/exports/sadzawka-catalog-review.json
+            catalog/exports/sadzawka-catalog-queue.json
+          retention-days: 90
+          if-no-files-found: warn
