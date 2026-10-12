@@ -358,23 +358,31 @@
     {
       "id": "athyrium-niponicum-pewter-lace",
       "botanical_name": "Athyrium niponicum 'Pewter Lace'",
-      "description": "Японский папоротник с серебристо-серыми ажурными листьями и тёмными жилками.",
+      "description": "Компактный японский папоротник с ажурными серебристо-серыми вайями и контрастными тёмными жилками; высота около 30–40 см.",
       "traits": {
         "height_cm": "30–40",
-        "light": "полутень–тень",
+        "light": "тень или полутень",
         "soil_structure": "гумусная, хорошо дренированная",
         "moisture": "влажная",
-        "foliage_type": "листопадный"
+        "foliage_type": "листопадный",
+        "height_cm_min": 30,
+        "height_cm_max": 40,
+        "soil": "гумусная, влажная, хорошо дренированная",
+        "foliage": "сезонная; может быть полувечнозелёной в мягком климате",
+        "frost_resistance": "полная (Florosfera), до −25°C по описанию",
+        "habit": "компактная куртина",
+        "recommended_uses": "тенистые клумбы, природные посадки, контейнеры"
       },
       "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace",
-      "source": "florosfera.pl",
+      "source": "Florosfera.pl",
       "image": {
         "url": "https://florosfera.pl/environment/cache/images/productGfx_257_350_350/Wietlica-japonska-Pewter-Lace---Athyrium-niponicum-Pewter-Lace.jpg",
-        "status": "product_gallery_link_extracted_delivery_unverified",
-        "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace"
+        "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace",
+        "status": "product_gallery_thumbnail_extracted_delivery_unverified"
       },
-      "data_quality": "source_page_checked",
-      "trait_source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace"
+      "data_quality": "exact_taxon_florosfera_traits_verified_photo_unverified",
+      "trait_source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Pewter-Lace",
+      "trait_quality": "exact_taxon_product_page_read_2026_10_12"
     },
     {
       "id": "rosa-boscobel",
@@ -936,32 +944,60 @@
       "botanical_name": "Gentiana septemfida var. lagodechiana",
       "inventory_name": "Gentiana septemfida var. lagodechiana",
       "category": "perennials",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
-      "image": {
-        "url": null,
-        "status": "not_collected"
+      "description": "Низкий горечавковый многолетник с насыщенно-кобальтовыми воронковидными цветками; образует компактные куртины, цветёт в июле–сентябре.",
+      "traits": {
+        "height_cm_min": 20,
+        "height_cm_max": 30,
+        "light": "солнце или лёгкая полутень",
+        "soil": "плодородная, водопроницаемая, слегка влажная, нейтральная; без застоя воды",
+        "flower_color": "кобальтово-синий",
+        "flowering": "июль — сентябрь",
+        "foliage": "сезонная",
+        "frost_resistance": "очень высокая (Florosfera)",
+        "habit": "компактная куртина",
+        "recommended_uses": "альпинарии, рокарии, бордюры, контейнеры"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "source_url": "https://florosfera.pl/Goryczka-siedmiodzielna-Gentiana-septemfida",
+      "source": "Florosfera.pl",
+      "image": {
+        "url": "https://florosfera.pl/environment/cache/images/productGfx_341_350_350/Goryczka-siedmiodzielna---Gentiana-septemfida-var.-lagodechiana.jpg",
+        "source_url": "https://florosfera.pl/Goryczka-siedmiodzielna-Gentiana-septemfida",
+        "status": "product_gallery_thumbnail_extracted_delivery_unverified"
+      },
+      "data_quality": "exact_taxon_florosfera_traits_verified_photo_unverified",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://florosfera.pl/Goryczka-siedmiodzielna-Gentiana-septemfida",
+      "trait_quality": "exact_taxon_product_page_read_2026_10_12"
     },
     {
       "id": "anemone-nemorosa-robinsoniana",
       "botanical_name": "Anemone nemorosa ‘Robinsoniana’",
       "inventory_name": "Anemone nemorosa ‘Robinsoniana’",
       "category": "perennials",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
-      "image": {
-        "url": null,
-        "status": "not_collected"
+      "description": "Раннецветущий лесной ветреница сорта Robinsoniana; белые цветки с нежным розовым или лиловым оттенком, образует низкий ковёр.",
+      "traits": {
+        "height_cm_min": 10,
+        "height_cm_max": 20,
+        "light": "тень или полутень",
+        "soil": "плодородная, хорошо дренированная, умеренно влажная",
+        "flower_color": "белый с розовым или лиловым оттенком (описание Florosfera)",
+        "flowering": "ранняя весна — май",
+        "foliage": "сезонная",
+        "frost_resistance": "очень высокая (Florosfera)",
+        "habit": "почвопокровный, образует куртины",
+        "recommended_uses": "лесные сады, теневые бордюры, под деревьями и кустарниками"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "source_url": "https://florosfera.pl/Zawilec-gajowy-Robinsoniana-Anemone-nemorosa",
+      "source": "Florosfera.pl",
+      "image": {
+        "url": "https://florosfera.pl/environment/cache/images/productGfx_575_350_350/Zawilec-gajowy-Robinsoniana---Anemone-nemorosa.jpg",
+        "source_url": "https://florosfera.pl/Zawilec-gajowy-Robinsoniana-Anemone-nemorosa",
+        "status": "product_gallery_thumbnail_extracted_delivery_unverified"
+      },
+      "data_quality": "exact_taxon_florosfera_traits_verified_photo_unverified",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://florosfera.pl/Zawilec-gajowy-Robinsoniana-Anemone-nemorosa",
+      "trait_quality": "exact_taxon_product_page_read_2026_10_12"
     },
     {
       "id": "hydrangea-paniculata-living-little-rosy",
