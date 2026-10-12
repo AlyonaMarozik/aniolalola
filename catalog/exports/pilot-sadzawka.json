@@ -1221,9 +1221,7 @@
         "flower_color": "розовый",
         "habit": "низкий компактный почвопокровный многолетник",
         "soil": "относительно нетребователен к типу почвы (по Sadzawka)",
-        "frost_resistance": "морозостоек (по Sadzawka; зона USDA не указана)",
-        "breeder": "Molter B.V.",
-        "container_at_sale": "P11"
+        "frost_resistance": "морозостоек (по Sadzawka; зона USDA не указана)"
       },
       "source_url": "https://sadzawka.pl/Geranium_wallichianum_Kelly_Anne-bodziszek",
       "source": "sadzawka.pl",
