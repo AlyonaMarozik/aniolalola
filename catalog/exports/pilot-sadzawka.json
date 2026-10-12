@@ -6,12 +6,12 @@
     {
       "id": "adiantum-venustum",
       "botanical_name": "Adiantum venustum",
-      "description": "Теневой вечнозелёный папоротник с ажурными листьями; требуется дренированная почва.",
+      "description": "Низкий ажурный папоротник с веерообразными зелёными листочками на тёмных черешках, образует плотные ковровые куртины; в описании Florosfera указан как зимующий в грунте.",
       "traits": {
         "hardiness_zone": 3,
         "leaf_length_cm": 30,
-        "light": "тень",
-        "soil": "дренированная, прохладная",
+        "light": "тень или полутень",
+        "soil": "плодородная, гумусная, дренированная, постоянно слегка влажная",
         "wind": "защищённое место",
         "drainage": "хороший; не переносит заболачивания",
         "moisture": "переносит периодическое подсыхание",
@@ -19,19 +19,26 @@
         "foliage_type": "вечнозелёное",
         "family": "Adiantaceae",
         "origin": "Гималаи",
-        "growth": "медленная акклиматизация, затем плотный покров"
+        "growth": "медленная акклиматизация, затем плотный покров",
+        "height_cm_min": 20,
+        "height_cm_max": 30,
+        "foliage": "описание называет зимнезелёным; атрибут магазина — сезонным (противоречие источника)",
+        "frost_resistance": "полная (классификация Florosfera)",
+        "habit": "низкая ковровая куртина",
+        "recommended_uses": "теневые цветники, лесные композиции, контейнеры",
+        "care": "Не допускать пересыхания; в холодных регионах рекомендовано укрытие."
       },
-      "source_url": "https://sadzawka.pl/Adiantum_venustum",
-      "source": "sadzawka.pl",
+      "source_url": "https://florosfera.pl/Niekropien-wdzieczny-Adiantum-venustum",
+      "source": "Florosfera.pl",
       "image": {
-        "url": "https://sadzawka.pl/environment/cache/images/productGfx_0f41d441b5804e00e69ba4557aa753f0_500_500.jpg?overlay=1",
-        "status": "extracted_from_product_page_unverified_hotlink",
-        "source_url": "https://sadzawka.pl/Adiantum_venustum"
+        "url": "https://florosfera.pl/environment/cache/images/productGfx_520_350_350/Niekropien-wdzieczny---Adiantum-venustum.jpg",
+        "source_url": "https://florosfera.pl/Niekropien-wdzieczny-Adiantum-venustum",
+        "status": "product_gallery_thumbnail_extracted_delivery_unverified"
       },
-      "data_quality": "partial_source_verified",
+      "data_quality": "exact_taxon_florosfera_traits_verified_photo_unverified",
       "growth_3_5_10_years": null,
-      "trait_source_url": "https://sadzawka.pl/Adiantum_venustum",
-      "trait_quality": "source_page_checked_2026_10_11"
+      "trait_source_url": "https://florosfera.pl/Niekropien-wdzieczny-Adiantum-venustum",
+      "trait_quality": "exact_taxon_product_page_read_2026_10_12"
     },
     {
       "id": "adiantum-pedatum-imbricatum",
