@@ -220,10 +220,19 @@ def detail(item):
 
 def main():
  ap=argparse.ArgumentParser()
+ ap.add_argument('--test-url',default='',help='Inspect one exact Sadzawka product URL without crawling or publishing')
  ap.add_argument('--limit',type=int,default=50)
  ap.add_argument('--delay',type=float,default=1.3)
  ap.add_argument('--pages-per-category',type=int,default=40)
  args=ap.parse_args()
+ if args.test_url:
+  u=safe(args.test_url)
+  if not u:raise SystemExit('Test URL must be HTTPS on sadzawka.pl')
+  record=detail({'source_url':u,'botanical_name':'Test plant','category':'manual_test'})
+  OUT.parent.mkdir(parents=True,exist_ok=True)
+  OUT.write_text(json.dumps({'source':'sadzawka.pl','mode':'single_product_test','records':[record]},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+  print(json.dumps({'mode':'single_product_test','name':record['botanical_name'],'traits':record['traits'],'description':record['description'],'image':record.get('image',{}).get('url')},ensure_ascii=False,indent=2))
+  return
  if not 1<=args.limit<=200 or args.delay<1 or not 1<=args.pages_per_category<=60:raise SystemExit('Unsafe limits')
  q=load(QUEUE,{'pending':[],'completed':[],'page_errors':[],'category_pages':{}})
  staged=load(OUT,{'source':'sadzawka.pl','scope':'botanical terrestrial categories only','records':[],'skipped':[],'errors':[]})
