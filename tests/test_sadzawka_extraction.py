@@ -47,6 +47,16 @@ class ExtractorTests(unittest.TestCase):
         raw = '<p>Roślina dostępna w doniczce P11, dodaj do koszyka i zamów.</p><p>Ta piękna bylina kwitnie długo w ogrodzie i tworzy szerokie kępy.</p>'
         self.assertIn('bylina', mod.botanical_text(raw, 'Plant')[1])
         self.assertNotIn('P11', mod.botanical_text(raw, 'Plant')[1])
+    def test_real_page_combined_specification_is_not_description(self):
+        # Live Sadzawka page concatenates labels in one <p>, without spacing.
+        raw = ('<p>Geranium wallichianum „Kelly-Anne” - bodziszek '
+               'rodzina: Geraniaceaehodowca: Molter B.V. stanowisko: słoneczne, półcieniste '
+               'wysokość: do 35 cm (w czasie kwitnienia) kwitnienie: V-XI</p>'
+               '<p>Ta niska bylina kwitnie pięknymi kwiatami od maja aż do jesieni w ogrodzie.</p>')
+        traits, desc = mod.botanical_text(raw, 'Geranium wallichianum Kelly-Anne')
+        self.assertEqual(desc, 'Ta niska bylina kwitnie pięknymi kwiatami od maja aż do jesieni w ogrodzie.')
+        self.assertNotIn('hodowca:', desc)
+        self.assertNotIn('rodzina:', desc)
     def test_meters_conversion(self):
         self.assertEqual(mod.convert_field("height_cm_max", "1,2 m"), 120)
         self.assertEqual(mod.convert_field("width_cm_max", "45 cm"), 45)
