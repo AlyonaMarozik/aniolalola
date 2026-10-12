@@ -1208,6 +1208,35 @@
       "growth_3_5_10_years": null,
       "trait_source_url": "https://e-katalogroslin.pl/plants/4582%2Cpieris-japonski-prelude_pieris-japonica-prelude",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
+    },
+    {
+      "id": "geranium-wallichianum-kelly-anne",
+      "botanical_name": "Geranium wallichianum 'Kelly-Anne'",
+      "description": "Низкий почвопокровный садовый бодзисzek с относительно крупными ярко-розовыми цветками. Формирует компактный покров, долго цветёт — с конца весны до первых заморозков. По описанию продавца морозостоек и нетребователен к месту посадки и почве.",
+      "traits": {
+        "family": "Geraniaceae",
+        "height_cm_max": 35,
+        "light": "солнце или полутень",
+        "flowering": "май — ноябрь",
+        "flower_color": "розовый",
+        "habit": "низкий компактный почвопокровный многолетник",
+        "soil": "относительно нетребователен к типу почвы (по Sadzawka)",
+        "frost_resistance": "морозостоек (по Sadzawka; зона USDA не указана)",
+        "breeder": "Molter B.V.",
+        "container_at_sale": "P11"
+      },
+      "source_url": "https://sadzawka.pl/Geranium_wallichianum_Kelly_Anne-bodziszek",
+      "source": "sadzawka.pl",
+      "sadzawka_category": "Bodziszki",
+      "image": {
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_6751_500_500/Geranium-wallichianum-Kelly-Anne.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Geranium_wallichianum_Kelly_Anne-bodziszek",
+        "status": "source_page_gallery_url_unverified_delivery"
+      },
+      "data_quality": "exact_cultivar_product_page_reviewed",
+      "trait_source_url": "https://sadzawka.pl/Geranium_wallichianum_Kelly_Anne-bodziszek",
+      "trait_quality": "source_page_checked_2026_10_12",
+      "growth_3_5_10_years": null
     }
   ],
   "data_policy": "No estimated or inferred botanical trait values. Missing verified values remain null; growth projections only from sourced mature dimensions.",
