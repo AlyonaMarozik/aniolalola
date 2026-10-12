@@ -177,7 +177,7 @@ LABELLED=re.compile(r'^([^:]{2,42}):\\s*(.{1,400})
  start=next((i for i,line in enumerate(lines) if re.match(r'(?i)^rodzina\s*:',line)),None)
  if start is None:
   start=next((i for i,line in enumerate(lines) if re.match(r'(?i)^(stanowisko|wysokość|kwitnienie)\s*:',line)),None)
- if start is None:return {},''
+ if start is None:return {},polish_first_paragraph(parser.paragraphs)
  fields={}
  for line in lines[start:start+75]:
   if END.search(line) or line.lower().startswith(('rośnie w doniczce','rosnie w doniczce')):break
