@@ -248,3 +248,12 @@
 Отдельно: Florosfera в описании Adiantum venustum называет растение зимнезелёным, а структурированный атрибут `Typ liści` — сезонным. Противоречие сохранено в поле `foliage` вместо произвольного разрешения.
 
 Оставшиеся 11 нерозовых позиций Inventory не считать проверенными/заполненными на Florosfera до точной проверки. Для двух Cyclamen coum Alba видовая страница `Cyclamen coum` **не является точным совпадением**. Следует проверить Epipactis palustris, Pleione MIX, Leucojum vernum, оба Cyclamen Alba, Bletilla Albomarginata, Asplenium trichomanes, Living Little Rosy, оба Helleborus HGC и Pieris Prelude по точным названиям и другим надёжным источникам при отсутствии Florosfera. Не выдумывать URL.
+
+
+### 2026-10-12 — заполнены оставшиеся 11 Inventory-профилей
+
+Коммит `41f3767ea56e905a2dad985368027e06ab2da2a1` обновил 11 существующих записей `catalog/exports/pilot-sadzawka.json`: Epipactis palustris, Pleione MIX, Leucojum vernum, Cyclamen coum Christmas Tree Leaf Alba, Cyclamen coum Silver Leaf Alba, Bletilla striata Albomarginata, Asplenium trichomanes, Helleborus HGC Spring Promise Elly, Helleborus HGC Spring Promise Anja Oudolf, Hydrangea paniculata Living Little Rosy, Pieris japonica Prelude. Общее число записей осталось 34. Inventory и схема посадки не менялись.
+
+Источники: первые семь — Sadzawka (для Bletilla Albomarginata точный сорт найден **только в общем списке каталога**, не на отдельной подтверждённой карточке; для Pleione MIX вид/сорт экземпляров неизвестен). Для Elly и Anja Oudolf — сайт оригинатора HGC/helleborus.de; для Living Little Rosy и Pieris Prelude — Związek Szkółkarzy Polskich. Размеры Pieris Prelude 60×90 см относятся к **10-летнему** растению, поэтому существующая условная 70/100/130-модель не должна интерпретироваться как подтверждённый рост этого сорта по возрастам. В каталоге есть `size_age_note` с указанием возраста источника.
+
+**Незавершено:** прямые URL фотографий для этих 11 записей не извлечены; `image.url` оставлены пустыми, статусы указывают на необходимость проверки. Дополнительно требуется визуальная проверка всех новых карточек в опубликованном приложении, разрешение конфликтов внутри источников (например цвет Cyclamen Christmas Tree Leaf Alba), проверка соответствия фото точному сорту и более точная сортовая страница Bletilla Albomarginata.
