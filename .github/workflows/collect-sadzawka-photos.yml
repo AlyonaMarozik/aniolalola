@@ -7,8 +7,6 @@ on:
         description: 'Number of missing-photo cards to process (0 = all)'
         required: false
         default: '3'
-  schedule:
-    - cron: '17 7 * * *'
 
 permissions:
   contents: write
