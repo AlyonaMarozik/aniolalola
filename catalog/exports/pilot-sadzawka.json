@@ -849,11 +849,11 @@
       "source_url": "https://sadzawka.pl/Pleione",
       "source": "Sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://sadzawka.pl/Pleione"
+        "url": "https://sadzawka.pl/environment/cache/images/500_500_productGfx_6030/Pleione-limprichti.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Pleione",
+        "status": "representative_species_photo_Pleione_limprichti_not_verified_as_mix_member"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "verified_product_page_representative_species_photo_not_exact_mix",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Pleione",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
@@ -903,11 +903,11 @@
       "source_url": "https://sadzawka.pl/Cyclamen_coum_Christmas_Tree_Leaf_Alba",
       "source": "Sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://sadzawka.pl/Cyclamen_coum_Christmas_Tree_Leaf_Alba"
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_5978_500_500/Cyclamen-coum-%E2%80%9EChristmas-Tree-Leaf-Alba.jpg?overlay=1",
+        "source_url": "https://sadzawka.pl/Cyclamen_coum_Christmas_Tree_Leaf_Alba",
+        "status": "exact_cultivar_product_gallery_url_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_taxon_traits_and_gallery_image_link_extracted_hotlink_unverified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Cyclamen_coum_Christmas_Tree_Leaf_Alba",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
@@ -1136,11 +1136,11 @@
       "source_url": "https://www.helleborus.de/winterblueher/lenzrosen/beliebte-sorten/elly/",
       "source": "Helleborus.de (HGC breeder)",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://www.helleborus.de/winterblueher/lenzrosen/beliebte-sorten/elly/"
+        "url": "https://www.helleborus.de/fileadmin/_processed_/8/c/csm_lenzrose_elly_blueten_3d9c9ebeac.jpg",
+        "source_url": "https://www.helleborus.de/winterblueher/lenzrosen/beliebte-sorten/elly/",
+        "status": "official_breeder_exact_cultivar_gallery_url_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_taxon_traits_and_gallery_image_link_extracted_hotlink_unverified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://www.helleborus.de/winterblueher/lenzrosen/beliebte-sorten/elly/",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
@@ -1163,11 +1163,11 @@
       "source_url": "https://www.helleborus.de/en/winter-flowerers/lenten-roses/popular-varieties/anja-oudolf",
       "source": "Helleborus.de (HGC breeder)",
       "image": {
-        "url": null,
-        "status": "official_product_photo_direct_url_not_extracted",
-        "source_url": "https://www.helleborus.de/en/winter-flowerers/lenten-roses/popular-varieties/anja-oudolf"
+        "url": "https://www.helleborus.de/fileadmin/_processed_/0/7/csm_lenzrose_anja_oudolf_blueten_ad8f8111de.jpg",
+        "source_url": "https://www.helleborus.de/en/winter-flowerers/lenten-roses/popular-varieties/anja-oudolf",
+        "status": "official_breeder_exact_cultivar_gallery_url_hotlink_unverified"
       },
-      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "data_quality": "exact_taxon_traits_and_gallery_image_link_extracted_hotlink_unverified",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://www.helleborus.de/en/winter-flowerers/lenten-roses/popular-varieties/anja-oudolf",
       "trait_quality": "exact_taxon_source_checked_2026_10_12"
