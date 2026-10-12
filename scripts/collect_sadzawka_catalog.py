@@ -144,7 +144,7 @@ FIELD_MAP={
  'kolor kwiatów':'flower_color','barwa kwiatów':'flower_color',
  'pochodzenie':'origin','zapach':'fragrance'
 }
-RETAIL=re.compile(r'(?i)\b(cena|producent|hodowca|donicz|pojemnik|kod produktu|dostępność|szt\.|koszyk|zł)\b')
+RETAIL=re.compile(r'(?i)\b(cena|cenie|producent\w*|hodowc\w*|donicz\w*|pojemnik\w*|kod produktu|dostępn\w*|szt\.?|koszyk\w*|zamów\w*|zł)\b')
 END=re.compile(r'(?i)^(opinie|zapytaj o produkt|poleć znajomemu|newsletter|koszyk|dodaj opinię)\b')
 MONTHS={'I':1,'II':2,'III':3,'IV':4,'V':5,'VI':6,'VII':7,'VIII':8,'IX':9,'X':10,'XI':11,'XII':12}
 MONTH_RU=['','январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь']
