@@ -233,3 +233,18 @@
 Сверка `inventory/data.js` и `catalog/exports/pilot-sadzawka.json`: 26 уникальных позиций Inventory, семь роз David Austin и 19 других. Для двух из 19 (Athyrium niponicum Burgundy Lace и Pewter Lace) уже существуют записи Florosfera с `source_url` и ссылками на галерею. Для 13 позиций (Epipactis palustris, Pleione MIX, Leucojum vernum, два Cyclamen coum Alba, Bletilla striata Albomarginata, Cypripedium reginae, гибрид kentuckiense × parviflorum, Gentiana septemfida var. lagodechiana, Anemone nemorosa Robinsoniana, Hydrangea paniculata Living Little Rosy, два Helleborus HGC Spring Promise, Pieris japonica Prelude) карточки-заготовки не имеют источника. Четыре позиции папоротников (Cyrtomium fortunei Clivicola, Adiantum venustum, Asplenium trichomanes и ещё одна?) требуют точного повторного сопоставления, поскольку имеют Sadzawka. Не создавать дубли и не переписывать проверенные источники без лучшего подтверждения.
 
 Следующий этап: проверить Florosfera по точному сорту каждой из 19 позиций, отдельно отметить точные совпадения, видовые страницы и отсутствующие сорта; только подтверждённые данные и прямые фото записывать в существующие карточки. Не подменять сорта фотографиями вида.
+
+
+### 2026-10-12 — реальный импорт Florosfera (исправление неверного сообщения о недоступности)
+
+Веб-поиск и открытие индексированных HTML-страниц Florosfera работают; ошибка DNS одного метода **не означала недоступность источника**. Из страниц `Cechy produktu` и `Opis` подтверждены точные таксоны и обновлены существующие записи в `catalog/exports/pilot-sadzawka.json`, без добавления дублей:
+- `5ca07335bc37418d40dc487aac5014cb4a4e3be3`: Cypripedium reginae, Cypripedium kentuckiense × parviflorum, Athyrium niponicum Burgundy Lace.
+- `f80e0448d01899b913a6db3495e537731596ab51`: Athyrium niponicum Pewter Lace, Gentiana septemfida var. lagodechiana, Anemone nemorosa Robinsoniana.
+- `eaddd85eebf8fd8e941a0c3fdfa1e973a1e48c45`: Adiantum venustum.
+- `319fc010741004b624933d854de413608d1bc082`: Cyrtomium fortunei Clivicola.
+
+Итого **8 точных записей Florosfera** обогащены характеристиками, описанием и источником. Некоторые URL фото извлечены через HTML-ссылки миниатюр, но веб-просмотрщик возвращал cache miss/ошибки для отдельных изображений. **Их отображение в приложении не подтверждено**, статусы помечены unverified. Для Clivicola сохранено существующее фото из Sadzawka (не подменять без проверки).
+
+Отдельно: Florosfera в описании Adiantum venustum называет растение зимнезелёным, а структурированный атрибут `Typ liści` — сезонным. Противоречие сохранено в поле `foliage` вместо произвольного разрешения.
+
+Оставшиеся 11 нерозовых позиций Inventory не считать проверенными/заполненными на Florosfera до точной проверки. Для двух Cyclamen coum Alba видовая страница `Cyclamen coum` **не является точным совпадением**. Следует проверить Epipactis palustris, Pleione MIX, Leucojum vernum, оба Cyclamen Alba, Bletilla Albomarginata, Asplenium trichomanes, Living Little Rosy, оба Helleborus HGC и Pieris Prelude по точным названиям и другим надёжным источникам при отсутствии Florosfera. Не выдумывать URL.
