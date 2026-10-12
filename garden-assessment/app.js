@@ -30,9 +30,28 @@ function active(p){if(season==='all')return true;const mm=month===null?seasons[s
 function controls(id,items,value,fn){const el=$(id);el.replaceChildren();for(const [label,v] of items){const b=document.createElement('button');b.textContent=label;if(v===value)b.className='on';b.onclick=()=>fn(v);el.append(b)}}
 function draw(tag,attrs){const n=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);layer.append(n);return n}
 function labelLines(name){
-const chars=Array.from(String(name||'').trim());
-const clipped=chars.length>25?[...chars.slice(0,24),'…']:chars;
-return [clipped.slice(0,13).join(''),clipped.slice(13,25).join('')].filter(Boolean);
+const words=String(name||'').trim().split(/\s+/).filter(Boolean);
+const lines=[''];
+for(const word of words){
+let row=lines.length-1;
+let limit=Math.min(13,25-(row?Array.from(lines[0]).length:0));
+const proposal=lines[row]?lines[row]+' '+word:word;
+if(Array.from(proposal).length<=limit){lines[row]=proposal;continue}
+if(row===0&&lines[0]){
+lines.push('');row=1;limit=Math.min(13,25-Array.from(lines[0]).length);
+if(Array.from(word).length<=limit){lines[1]=word;continue}
+}
+if(row===0){
+lines[0]=Array.from(word).slice(0,12).join('')+'…';
+continue;
+}
+const current=Array.from(lines[1]);
+if(!current.length)lines[1]=Array.from(word).slice(0,Math.max(0,limit-1)).join('')+'…';
+else if(current.length<limit)lines[1]+='…';
+else lines[1]=current.slice(0,limit-1).join('')+'…';
+break;
+}
+return lines.filter(Boolean);
 }
 function render(){
 controls('assessment-season',[['Все','all'],['Весна','spring'],['Лето','summer'],['Осень','autumn'],['Зима','winter']],season,v=>{season=v;month=null;render()});
