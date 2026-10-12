@@ -326,24 +326,34 @@
     {
       "id": "athyrium-niponicum-burgundy-lace",
       "botanical_name": "Athyrium niponicum 'Burgundy Lace'",
-      "description": "Японский папоротник с серебристой листвой и бордово-пурпурными жилками.",
+      "description": "Японский папоротник с серебристо-зелёными листьями и бордовыми жилками; компактная раскидистая куртина 40–60 см.",
       "traits": {
         "height_cm": "40–60",
         "width_cm": "40–60",
-        "light": "полутень–тень",
+        "light": "тень или полутень",
         "soil_structure": "гумусная, хорошо дренированная",
         "moisture": "постоянно влажная",
-        "foliage_type": "листопадный"
+        "foliage_type": "листопадный",
+        "height_cm_min": 40,
+        "height_cm_max": 60,
+        "width_cm_min": 40,
+        "width_cm_max": 60,
+        "soil": "плодородная, гумусная, влажная, дренированная",
+        "foliage": "сезонная, в мягком климате полувечнозелёная",
+        "frost_resistance": "полная (Florosfera), около −25 °C",
+        "habit": "компактная раскидистая куртина",
+        "care": "Беречь от жгучего солнца, молодые растения защищать в бесснежные зимы."
       },
       "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace",
-      "source": "florosfera.pl",
+      "source": "Florosfera.pl",
       "image": {
         "url": "https://florosfera.pl/environment/cache/images/productGfx_288_350_350/Wietlica-japonska-Burgundy-Lace---Athyrium-niponicum-Burgundy-Lace.jpg",
-        "status": "linked_from_product_gallery_not_delivery_verified",
-        "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace"
+        "source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace",
+        "status": "gallery_thumbnail_link_extracted_hotlink_unverified"
       },
-      "data_quality": "source_page_verified",
-      "trait_source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace"
+      "data_quality": "exact_taxon_florosfera_traits_verified_photo_pending",
+      "trait_source_url": "https://florosfera.pl/Wietlica-japonska-Athyrium-niponicum-Burgundy-Lace",
+      "trait_quality": "exact_taxon_product_page_read_2026_10_12"
     },
     {
       "id": "athyrium-niponicum-pewter-lace",
@@ -865,32 +875,61 @@
       "botanical_name": "Cypripedium reginae",
       "inventory_name": "Cypripedium reginae",
       "category": "orchids",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
-      "image": {
-        "url": null,
-        "status": "not_collected"
+      "description": "Башмачок с бело-розовыми цветками, 40–60 см; цветёт весной — в начале лета.",
+      "traits": {
+        "height_cm_min": 40,
+        "height_cm_max": 60,
+        "light": "полутень, рассеянный свет",
+        "soil": "влажный, дренированный минеральный субстрат: перлит, вермикулит, керамзит, песок",
+        "flower_color": "белый с розовым",
+        "flowering": "весна — начало лета",
+        "foliage": "сезонная",
+        "frost_resistance": "полная (Florosfera)",
+        "temperature_optimal_c": "15–22",
+        "growth_start": "апрель — май",
+        "care": "Беречь от засухи, перегрева и прямого интенсивного солнца."
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "source_url": "https://florosfera.pl/Obuwik-krolewski-Cypripedium-reginae",
+      "source": "Florosfera.pl",
+      "image": {
+        "url": "https://florosfera.pl/environment/cache/images/productGfx_312_350_350/Obuwik-krolewski---Cypripedium-reginae.jpg",
+        "source_url": "https://florosfera.pl/Obuwik-krolewski-Cypripedium-reginae",
+        "status": "gallery_thumbnail_link_extracted_hotlink_unverified"
+      },
+      "data_quality": "exact_taxon_florosfera_traits_verified_photo_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://florosfera.pl/Obuwik-krolewski-Cypripedium-reginae",
+      "trait_quality": "exact_taxon_product_page_read_2026_10_12"
     },
     {
       "id": "cypripedium-kentuckiense-parviflorum",
       "botanical_name": "Cypripedium kentuckiense × parviflorum",
       "inventory_name": "Cypripedium kentuckiense × parviflorum",
       "category": "orchids",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Гибридный башмачок 40–60 см с крупными жёлтыми цветками и коричневыми лепестками.",
+      "traits": {
+        "height_cm_min": 40,
+        "height_cm_max": 60,
+        "light": "полутень, рассеянный свет",
+        "soil": "влажный, дренированный минеральный субстрат: перлит, вермикулит, керамзит, песок",
+        "flower_color": "жёлтый с коричневыми лепестками",
+        "flowering": "весна — начало лета",
+        "foliage": "сезонная",
+        "frost_resistance": "полная (Florosfera)",
+        "temperature_optimal_c": "15–22",
+        "care": "Беречь от засухи и перегрева."
+      },
+      "source_url": "https://florosfera.pl/Obuwik-Cypripedium-kentuckiense-x-parviflorum",
+      "source": "Florosfera.pl",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "source_url": "https://florosfera.pl/Obuwik-Cypripedium-kentuckiense-x-parviflorum",
+        "status": "product_gallery_present_direct_image_not_extracted"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_florosfera_traits_verified_photo_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://florosfera.pl/Obuwik-Cypripedium-kentuckiense-x-parviflorum",
+      "trait_quality": "exact_taxon_product_page_read_2026_10_12"
     },
     {
       "id": "gentiana-septemfida-var-lagodechiana",
