@@ -172,9 +172,14 @@ def convert_field(key,value):
 BOTANICAL_PROSE=re.compile(r'(?i)(roślin|bylin|kwiat|liści|liść|pęd|papro|pokrój|kwit|ogr[oó]d|odmian|gleb|wilgot|cieni|słonec|mroz|wysokość)')
 LABELLED=re.compile(r'^([^:]{2,42}):\s*(.{1,400})$')
 
+PARAM_LABELS=re.compile(r'(?i)(?:rodzina|hodowca|stanowisko|nasłonecznienie|wysokość|szerokość|kwitnienie|gleba|podłoże|wilgotność|mrozoodporność)\\s*:')
+
 def polish_first_paragraph(paragraphs):
  for paragraph in paragraphs:
   line=' '.join(paragraph.split())
+  # Product specification tables are sometimes stored as a single <p> and
+  # their <br> separators can disappear, e.g. Geraniaceaehodowca:.
+  if len(PARAM_LABELS.findall(line))>=2:continue
   if len(line)<45 or RETAIL.search(line) or END.search(line):continue
   if LABELLED.match(line) or not BOTANICAL_PROSE.search(line):continue
   return line[:650].rstrip()
