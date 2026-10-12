@@ -113,11 +113,11 @@
     {
       "id": "asplenium-trichomanes",
       "botanical_name": "Asplenium trichomanes",
-      "description": "Небольшой скальный папоротник.",
+      "description": "Небольшой вечнозелёный скальный папоротник с округлыми листочками вдоль почти чёрных черешков; переносит мороз и сухие периоды.",
       "traits": {
-        "hardiness_zone": 3,
+        "hardiness_zone": "USDA 3 (по продавцу)",
         "leaf_length_cm": 20,
-        "light": "солнце–полутень–тень",
+        "light": "солнце, полутень или тень",
         "calcium": "да (указано питомником)",
         "soil_structure": "скальные щели, каменистый субстрат",
         "drainage": "хороший",
@@ -126,19 +126,24 @@
         "habitat": "известковые стены и скальные щели",
         "foliage_type": "вечнозелёное",
         "family": "Aspleniaceae",
-        "origin": "Северное полушарие"
+        "origin": "Северное полушарие",
+        "height_cm_max": 20,
+        "soil": "хорошо дренированная, допускает известь; подходит для каменных стен",
+        "foliage": "вечнозелёная",
+        "care": "Избегать застойного переувлажнения; подходит для известняковых камней.",
+        "awards": "RHS AGM (по продавцу)"
       },
       "source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
-      "source": "sadzawka.pl",
+      "source": "Sadzawka.pl",
       "image": {
         "url": "https://sadzawka.pl/userdata/public/gfx/da44192ffc91c35ef22a339b96dee6c1.jpg",
         "source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
         "status": "source_page_link_extracted_unverified_delivery"
       },
-      "data_quality": "partial_source_verified",
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
       "growth_3_5_10_years": null,
       "trait_source_url": "https://sadzawka.pl/Asplenium_trichomanes-Zanokcica_skalna",
-      "trait_quality": "source_page_checked_2026_10_11"
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "arachniodes-aristata-variegata",
@@ -801,96 +806,164 @@
       "botanical_name": "Epipactis palustris",
       "inventory_name": "Epipactis palustris",
       "category": "orchids",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Болотная орхидея с рыхлыми соцветиями нежных бежево-белых и розоватых цветков; предпочитает влажные и периодически заболоченные места.",
+      "traits": {
+        "height_cm_min": 30,
+        "height_cm_max": 70,
+        "light": "солнце или полутень",
+        "soil": "влажная или мокрая, плодородная почва",
+        "flowering": "июнь — июль",
+        "flower_color": "бежево-белый, розоватый",
+        "hardiness_zone": "USDA 5–9",
+        "habitat": "влажные луга, торфяники, поймы"
+      },
+      "source_url": "https://sadzawka.pl/Epipactis_palustris-Kruszczyk_blotny",
+      "source": "Sadzawka.pl",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://sadzawka.pl/Epipactis_palustris-Kruszczyk_blotny"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://sadzawka.pl/Epipactis_palustris-Kruszczyk_blotny",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "pleione-mix",
       "botanical_name": "Pleione MIX",
       "inventory_name": "Pleione MIX",
       "category": "orchids",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Смесь плейоне: небольшие наземные орхидеи, цветущие ранней весной до появления листьев; точный вид и окраска конкретного экземпляра в смеси неизвестны.",
+      "traits": {
+        "height_cm_min": 10,
+        "height_cm_max": 15,
+        "light": "полутень или тень",
+        "soil": "питательная, влажная в период роста, очень хорошо дренированная",
+        "flowering": "март — апрель",
+        "flower_color": "розовый, кремовый или жёлтый — зависит от экземпляра MIX",
+        "hardiness_zone": "USDA 7 (по продавцу)",
+        "care": "Псевдобульбы сажать неглубоко; умеренный полив в период роста, сухое прохладное хранение в покое; по описанию продавца защищать от температур ниже −10 °C.",
+        "mix_note": "Фотография одного вида не подтверждает идентичность растений в MIX."
+      },
+      "source_url": "https://sadzawka.pl/Pleione",
+      "source": "Sadzawka.pl",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://sadzawka.pl/Pleione"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://sadzawka.pl/Pleione",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "leucojum-vernum",
       "botanical_name": "Leucojum vernum",
       "inventory_name": "Leucojum vernum",
       "category": "bulbs",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Весенний белоцветник — долговечное ранневесеннее луковичное растение с белыми колокольчатыми цветками и зелёными кончиками лепестков.",
+      "traits": {
+        "height_cm": 15,
+        "light": "лёгкая тень; солнце при достаточной влажности",
+        "soil": "прохладная, гумусная, влажная",
+        "flowering": "февраль — апрель",
+        "flower_color": "белый с зелёными или желтовато-зелёными отметинами",
+        "care": "Поддерживать влажность в период роста.",
+        "awards": "RHS AGM (по продавцу)"
+      },
+      "source_url": "https://sadzawka.pl/Leucojum_vernum-Sniezyca_wiosenna",
+      "source": "Sadzawka.pl",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://sadzawka.pl/Leucojum_vernum-Sniezyca_wiosenna"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://sadzawka.pl/Leucojum_vernum-Sniezyca_wiosenna",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "cyclamen-coum-christmas-tree-leaf-alba",
       "botanical_name": "Cyclamen coum ‘Christmas Tree Leaf Alba’",
       "inventory_name": "Cyclamen coum ‘Christmas Tree Leaf Alba’",
       "category": "bulbs",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Миниатюрный цикламен с белыми цветками и контрастным рисунком листьев: тёмно-зелёный центр в форме ёлочки, серебристо-белая кайма.",
+      "traits": {
+        "light": "тень",
+        "soil": "гумусная, хорошо проницаемая",
+        "flowering": "март — апрель",
+        "flower_color": "белый",
+        "foliage": "тёмно-зелёный рисунок «ёлочка» на серебристом фоне",
+        "care": "Затенённое место под кустарниками или в рокарии; зимнее укрытие хвойным лапником по рекомендации продавца.",
+        "source_conflict": "В тексте продавца встречается общее упоминание розовых цветков, противоречащее названию Alba и сортовому описанию белых цветков."
+      },
+      "source_url": "https://sadzawka.pl/Cyclamen_coum_Christmas_Tree_Leaf_Alba",
+      "source": "Sadzawka.pl",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://sadzawka.pl/Cyclamen_coum_Christmas_Tree_Leaf_Alba"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://sadzawka.pl/Cyclamen_coum_Christmas_Tree_Leaf_Alba",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "cyclamen-coum-silver-leaf-alba",
       "botanical_name": "Cyclamen coum ‘Silver Leaf Alba’",
       "inventory_name": "Cyclamen coum ‘Silver Leaf Alba’",
       "category": "bulbs",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Миниатюрный цикламен с почти полностью серебристо-белыми листьями и белыми ранневесенними цветками; летом теряет листву и уходит в покой.",
+      "traits": {
+        "light": "тень",
+        "soil": "гумусная, проницаемая; летом в период покоя сухая",
+        "flowering": "март — апрель",
+        "flower_color": "белый",
+        "foliage": "почти полностью серебристо-белая пластинка; летний покой",
+        "hardiness_zone": "USDA 6–9 (по продавцу)",
+        "care": "Посадка в затенённом месте; летний сухой покой; зимнее укрытие лапником по рекомендации продавца."
+      },
+      "source_url": "https://sadzawka.pl/Cyclamen_coum_Silver_Leaf-Cyklamen_dyskowaty_srebrny",
+      "source": "Sadzawka.pl",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://sadzawka.pl/Cyclamen_coum_Silver_Leaf-Cyklamen_dyskowaty_srebrny"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://sadzawka.pl/Cyclamen_coum_Silver_Leaf-Cyklamen_dyskowaty_srebrny",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "bletilla-striata-albomarginata",
       "botanical_name": "Bletilla striata ‘Albomarginata’",
       "inventory_name": "Bletilla striata ‘Albomarginata’",
       "category": "orchids",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Пестролистная блетилла с розовыми цветками и узкой мелово-белой каймой листьев; садовая наземная орхидея.",
+      "traits": {
+        "light": "лёгкая тень",
+        "soil": "гумусная, влажная, хорошо дренированная",
+        "flower_color": "розовый",
+        "foliage": "узкая белая кайма на листьях",
+        "origin": "Китай и Япония",
+        "source_page_kind": "точный сорт в списке каталога; индивидуальный URL не подтверждён"
+      },
+      "source_url": "https://sadzawka.pl/pl/c/B/111/1/full",
+      "source": "Sadzawka.pl",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://sadzawka.pl/pl/c/B/111/1/full"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://sadzawka.pl/pl/c/B/111/1/full",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "cypripedium-reginae",
@@ -1018,64 +1091,117 @@
       "botanical_name": "Hydrangea paniculata ‘Living Little Rosy’",
       "inventory_name": "Hydrangea paniculata ‘Living Little Rosy’",
       "category": "hydrangeas",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Карликовая метельчатая гортензия Living Little Rosy ('LC NO16') с компактной шаровидной кроной и крепкими побегами; кремово-белые соцветия темнеют до насыщенно-розовых.",
+      "traits": {
+        "height_cm": 70,
+        "light": "солнце или полутень",
+        "soil": "плодородная, постоянно влажная, слабокислая",
+        "flowering": "июль — сентябрь",
+        "flower_color": "кремово-белый → белый → тёмно-розовый",
+        "foliage": "листопадная",
+        "hardiness_zone": "USDA 5a (по ZSzP)",
+        "habit": "компактный шаровидный куст",
+        "cultivar_code": "LC NO16",
+        "year_introduced": 2022,
+        "care": "Весенняя обрезка для обильного цветения; цветёт на побегах текущего года."
+      },
+      "source_url": "https://zszp.pl/roslina/konkurs-roslin-nowosci-zszp/konkurs-roslin-nowosci-2023/hydrangea-paniculata-living-little-rosy-lc-no16-pbr/",
+      "source": "Związek Szkółkarzy Polskich",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://zszp.pl/roslina/konkurs-roslin-nowosci-zszp/konkurs-roslin-nowosci-2023/hydrangea-paniculata-living-little-rosy-lc-no16-pbr/"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://zszp.pl/roslina/konkurs-roslin-nowosci-zszp/konkurs-roslin-nowosci-2023/hydrangea-paniculata-living-little-rosy-lc-no16-pbr/",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "helleborus-hgc-spring-promise-elly",
       "botanical_name": "Helleborus HGC Spring Promise ‘Elly’",
       "inventory_name": "Helleborus HGC Spring Promise ‘Elly’",
       "category": "perennials",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Морозник HGC Spring Promise Elly: крупные густомахровые тёмно-розовые цветки; формирует широкую куртину.",
+      "traits": {
+        "height_cm_min": 40,
+        "height_cm_max": 50,
+        "width_cm_max": 80,
+        "light": "полутень или тень",
+        "flowering": "с ноября (естественное цветение по селекционеру)",
+        "flower_color": "тёмно-розовый",
+        "flower_size": "крупный, густомахровый",
+        "planting_spacing_cm": 70
+      },
+      "source_url": "https://www.helleborus.de/winterblueher/lenzrosen/beliebte-sorten/elly/",
+      "source": "Helleborus.de (HGC breeder)",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://www.helleborus.de/winterblueher/lenzrosen/beliebte-sorten/elly/"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://www.helleborus.de/winterblueher/lenzrosen/beliebte-sorten/elly/",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "helleborus-hgc-spring-promise-anja-oudolf",
       "botanical_name": "Helleborus HGC Spring Promise ‘Anja Oudolf’",
       "inventory_name": "Helleborus HGC Spring Promise ‘Anja Oudolf’",
       "category": "perennials",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Морозник HGC Spring Promise Anja Oudolf: жёлтые цветки с малиновыми жилками, красноватой каймой и контрастными тёмно-красными нектарниками.",
+      "traits": {
+        "height_cm_min": 30,
+        "height_cm_max": 40,
+        "light": "полутень или тень",
+        "flowering": "с января (по селекционеру)",
+        "flower_color": "жёлтый с малиновыми жилками и каймой",
+        "planting_spacing_cm": 70,
+        "care": "Сажать весной или осенью, когда земля не промёрзла."
+      },
+      "source_url": "https://www.helleborus.de/en/winter-flowerers/lenten-roses/popular-varieties/anja-oudolf",
+      "source": "Helleborus.de (HGC breeder)",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://www.helleborus.de/en/winter-flowerers/lenten-roses/popular-varieties/anja-oudolf"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://www.helleborus.de/en/winter-flowerers/lenten-roses/popular-varieties/anja-oudolf",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     },
     {
       "id": "pieris-japonica-prelude",
       "botanical_name": "Pieris japonica Prelude",
       "inventory_name": "Pieris japonica Prelude",
       "category": "trees",
-      "description": null,
-      "traits": {},
-      "source_url": null,
-      "source": null,
+      "description": "Низкорослый вечнозелёный пиерис Prelude с плоскошаровидной кроной; розоватые бутоны раскрываются белыми соцветиями.",
+      "traits": {
+        "height_cm": 60,
+        "width_cm": 90,
+        "size_age_note": "Размеры около 60×90 см указаны для 10-летнего куста (ZSzP).",
+        "light": "солнце или полутень, защищённое место",
+        "soil": "кислая, гумусная, умеренно влажная",
+        "flowering": "конец апреля — май",
+        "flower_color": "белый, бутоны розоватые",
+        "foliage": "вечнозелёная",
+        "hardiness_zone": "USDA 7 (по ZSzP)",
+        "habit": "медленнорастущий плоскошаровидный куст",
+        "care": "Защита от ветра и сильных зимних морозов; возможно подмерзание цветочных почек."
+      },
+      "source_url": "https://e-katalogroslin.pl/plants/4582%2Cpieris-japonski-prelude_pieris-japonica-prelude",
+      "source": "Związek Szkółkarzy Polskich",
       "image": {
         "url": null,
-        "status": "not_collected"
+        "status": "official_product_photo_direct_url_not_extracted",
+        "source_url": "https://e-katalogroslin.pl/plants/4582%2Cpieris-japonski-prelude_pieris-japonica-prelude"
       },
-      "data_quality": "inventory_name_only_unverified_traits",
-      "growth_3_5_10_years": null
+      "data_quality": "exact_taxon_traits_verified_photo_direct_url_pending",
+      "growth_3_5_10_years": null,
+      "trait_source_url": "https://e-katalogroslin.pl/plants/4582%2Cpieris-japonski-prelude_pieris-japonica-prelude",
+      "trait_quality": "exact_taxon_source_checked_2026_10_12"
     }
   ],
   "data_policy": "No estimated or inferred botanical trait values. Missing verified values remain null; growth projections only from sourced mature dimensions.",
