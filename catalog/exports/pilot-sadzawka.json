@@ -194,8 +194,9 @@
       "source_url": "https://sadzawka.pl/Asplenium_ebenoides-Zanokcica",
       "source": "sadzawka.pl",
       "image": {
-        "url": null,
-        "status": "direct_url_not_extracted"
+        "url": "https://sadzawka.pl/environment/cache/images/productGfx_5168_500_500/Asplenium-ebenoides.jpg",
+        "status": "verified_remote_image",
+        "source_url": "https://sadzawka.pl/Asplenium_ebenoides-Zanokcica"
       },
       "data_quality": "partial_source_verified",
       "growth_3_5_10_years": null,
