@@ -1,15 +1,15 @@
-name: Stage Sadzawka botanical catalog
+name: Collect Sadzawka botanical catalog for review
 
 on:
   workflow_dispatch:
     inputs:
       limit:
-        description: 'Product detail pages to inspect (1–200)'
+        description: 'Maximum product detail pages to collect into local JSON (1-200)'
         required: true
         default: '50'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: stage-sadzawka-catalog
@@ -26,18 +26,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Reject master data writes
-        run: test "${{ github.ref_name }}" != "master"
-      - name: Check Python syntax
+      - name: Validate Python syntax
         run: python -m py_compile scripts/collect_sadzawka_catalog.py
-      - name: Stage botanical catalog for review
+      - name: Collect into local JSON only
         run: python scripts/collect_sadzawka_catalog.py --limit "${{ inputs.limit }}"
-      - name: Commit staging files only
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog/exports/sadzawka-catalog-review.json catalog/exports/sadzawka-catalog-queue.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Stage Sadzawka botanical candidates for review"
-            git push origin "HEAD:${{ github.ref_name }}"
-          fi
+      - name: Upload review JSON without committing to GitHub
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sadzawka-botanical-review
+          path: |
+            catalog/exports/sadzawka-catalog-review.json
+            catalog/exports/sadzawka-catalog-queue.json
+          if-no-files-found: warn
+          retention-days: 30
