@@ -4,6 +4,7 @@ import sys
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+from urllib.error import HTTPError
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
@@ -99,6 +100,22 @@ class BatchTests(unittest.TestCase):
 <h3><a href="/podpory-do-pnaczy">Podpory do pnączy</a></h3>'''
         plants,_=batch.parse_category(example,BASE,BASE,category='Bodziszki')
         self.assertEqual([p['botanical_name'] for p in plants],['Geranium sanguineum'])
+
+    def test_http_503_retries_only_once(self):
+        calls=[]
+        def fail():
+            calls.append(1)
+            raise HTTPError(BASE,503,'Service Unavailable',{},None)
+        with self.assertRaises(HTTPError):batch.once_retry(fail,delay=0)
+        self.assertEqual(len(calls),2)
+
+    def test_http_404_is_failed_without_retry(self):
+        calls=[]
+        def fail():
+            calls.append(1)
+            raise HTTPError(BASE,404,'Not Found',{},None)
+        with self.assertRaises(HTTPError):batch.once_retry(fail,delay=0)
+        self.assertEqual(len(calls),1)
 
     def test_checkpoint_migration_preserves_68_cards_and_failures(self):
         state=batch.initial_state(('Bodziszki',))
