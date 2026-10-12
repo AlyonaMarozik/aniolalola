@@ -98,11 +98,16 @@ def category_page(url):
 def load(path,default):
  return json.loads(path.read_text(encoding='utf-8')) if path.exists() else default
 
+def identifier(name):
+ base=unicodedata.normalize('NFKD',name).encode('ascii','ignore').decode('ascii').lower()
+ base=re.sub(r'[^a-z0-9]+','-',base).strip('-')
+ return base or 'unnamed-plant'
+
 def detail(item):
  s=Scan();s.feed(fetch(item['source_url']))
  meta=s.meta;name=title(meta.get('og:title') or ' '.join(s.head)) or item['botanical_name']
  description=' '.join(html.unescape(meta.get('og:description') or meta.get('description') or '').split())[:800]
- record={'botanical_name':name,'description':description,'traits':{},'source_url':item['source_url'],'source':'sadzawka.pl','sadzawka_category':item['category'],'data_quality':'product_metadata_unreviewed','trait_quality':'not_extracted'}
+ record={'id':identifier(name),'botanical_name':name,'description':description,'traits':{},'source_url':item['source_url'],'source':'sadzawka.pl','sadzawka_category':item['category'],'data_quality':'product_metadata_unreviewed','trait_quality':'not_extracted'}
  img=safe(urljoin(item['source_url'],meta.get('og:image',''))) if meta.get('og:image') else ''
  if img and re.search(r'\.(?:jpe?g|png|webp)$',urlparse(img).path,re.I):
   record['image']={'url':img,'source_url':item['source_url'],'status':'meta_unverified'}
