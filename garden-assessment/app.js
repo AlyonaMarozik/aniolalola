@@ -24,6 +24,18 @@ for(const [name,cells] of grouped){const unique=name==='Boscobel'&&cells.include
 const occupied=new Set(next.map(p=>p.cell));for(const [set,name,color,d,leaf] of [[pine,'Сосна','#43794e',.35,'1-12'],[bush,'Барбарис','#b45767',.25,'4-11']])for(const cell of set){if(!coordinate(cell)||occupied.has(cell))continue;next.push({...make(name,cell,'background:'+name+':'+cell),background:true,fixed:false,now:d,adult:d,color,flower:[],leaf:range(leaf)})}
 plants=next.map(p=>{const old=prior.get(p.id);return old?{...p,x:old.x,y:old.y,now:old.now,adult:old.adult}:p});render()
 }
+// Only uncommitted, unplanted hill inventory can be added as an assessment experiment.
+// A confirmed Fact specimen is not a movable second copy. Locked/draft Plan spots
+// already reserve their inventory specimens, even when only locked spots are rendered.
+function assessmentAvailable(item){
+ if(item.assessment_scope==='outside_hill')return 0;
+ const total=Number(item.count)||0;
+ const confirmed=Math.min(total,Math.max(Number(item.planted_count)||0,Number(state.planted?.[item.name])||0));
+ const reserved=Object.entries(state.plan||{}).filter(([cell,name])=>name===item.name&&coordinate(cell)).length;
+ const planned=(item.name==='Boscobel'&&state.plan?.B16==='Boscobel'&&state.plan?.C16==='Boscobel')?reserved-1:reserved;
+ const visual=extras.filter(p=>p.name===item.name).length;
+ return Math.max(0,total-confirmed-planned-visual);
+}
 function all(){return [...plants,...extras]}function diameter(p){return p.now+(p.adult-p.now)*age/10}
 function shown(p){return !(hideBg&&p.background&&!p.fixed)}
 function active(p){if(season==='all')return true;const mm=month===null?seasons[season]:[month];return mm.some(m=>(effect!=='leaf'&&p.flower.includes(m))||(effect!=='flower'&&p.leaf.includes(m)))}
@@ -61,12 +73,11 @@ controls('assessment-effect',[['Вся декоративность','all'],['Ц
 $('assessment-bg').textContent=hideBg?'Показать фон':'Убрать фон';$('assessment-bg').classList.toggle('on',hideBg);layer.replaceChildren();
 let count=0;for(const p of all()){if(!shown(p))continue;count++;const x=p.x*100,y=58+p.y*100,r=diameter(p)*50,on=active(p);draw('circle',{cx:x,cy:y,r,fill:on?p.color:'none','fill-opacity':on?.43:0,stroke:p.id===selected?'#aa772c':on?p.color:'#9ca79b','stroke-width':p.id===selected?4:1.5,'stroke-dasharray':on?'none':'5 5'});if(on||p.id===selected){const lines=labelLines(p.name);const t=draw('text',{x,y:y+(lines.length===2?-3:3),'text-anchor':'middle','font-size':10,'font-weight':600,fill:'#293b30','pointer-events':'none'});for(const [i,line] of lines.entries()){const span=document.createElementNS(ns,'tspan');span.setAttribute('x',x);if(i)span.setAttribute('dy','11');span.textContent=line;t.append(span)}}}
 const p=all().find(p=>p.id===selected);$('assessment-selected').textContent=p?p.name+' · '+diameter(p).toFixed(2)+' м · '+(p.background?'фон':p.fixed?'из Плана':'визуал'):'Выбери кружочек';$('assessment-count').textContent=count+' кружочков · изменения не записываются в План';
-const used=new Map();for(const p of plants.filter(p=>p.id.startsWith('plan:')))used.set(p.name,(used.get(p.name)||0)+1);for(const p of extras)used.set(p.name,(used.get(p.name)||0)+1);
-const sel=$('assessment-add'),prev=sel.value;sel.replaceChildren(new Option('— Растение из inventory —',''));for(const item of inventory){const left=Number(item.count||0)-(used.get(item.name)||0);if(left>0)sel.append(new Option(item.name+' · доступно '+left,item.name))}if([...sel.options].some(o=>o.value===prev))sel.value=prev;
+const sel=$('assessment-add'),prev=sel.value;sel.replaceChildren(new Option('— Свободное растение для горки —',''));for(const item of inventory){const left=assessmentAvailable(item);if(left>0)sel.append(new Option(item.name+' · доступно '+left,item.name))}if([...sel.options].some(o=>o.value===prev))sel.value=prev;
 }
 $('assessment-bg').onclick=()=>{hideBg=!hideBg;render()};
 $('assessment-reset').onclick=()=>{if(confirm('Сбросить только визуальные эксперименты?')){plants=[];extras=[];selected=null;rebuild()}};
-$('assessment-add-btn').onclick=()=>{const name=$('assessment-add').value;if(!name)return;const p={...traits(name),name,cell:'',id:'extra:'+(++serial),x:5,y:1,fixed:false,background:false};extras.push(p);selected=p.id;render()};
+$('assessment-add-btn').onclick=()=>{const name=$('assessment-add').value,item=inventory.find(p=>p.name===name);if(!item||assessmentAvailable(item)<1){render();return}const p={...traits(name),name,cell:'',id:'extra:'+(++serial),x:5,y:1,fixed:false,background:false};extras.push(p);selected=p.id;render()};
 function resize(d){const p=all().find(p=>p.id===selected);if(!p)return;const key=age===0?'now':'adult';p[key]=Math.max(.1,p[key]+d);render()}
 $('assessment-minus').onclick=()=>resize(-.1);$('assessment-plus').onclick=()=>resize(.1);
 $('assessment-remove').onclick=()=>{if(!String(selected).startsWith('extra:'))return;extras=extras.filter(p=>p.id!==selected);selected=null;render()};
