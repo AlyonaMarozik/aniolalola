@@ -13,6 +13,28 @@
 'use strict';
 let state;try{state=JSON.parse(localStorage.getItem('sad-planner-v9'))||{plan:{...initial},locked:[]}}catch(e){state={plan:{...initial},locked:[]}}
 if(!state.plan)state.plan={...initial};if(!Array.isArray(state.locked))state.locked=[];if(!state.planted||typeof state.planted!=='object')state.planted={};
+// One-time reconciliation: migrate confirmed plantings without clearing other local plans, locks or photos.
+(function reconcileConfirmedPlantings(){
+  const migrationKey='confirmed-plantings-2026-10-14-v1';
+  if(localStorage.getItem(migrationKey)==='done')return;
+  const updates=[
+    {name:'Cypripedium reginae',cells:['C4']},
+    {name:'Cypripedium kentuckiense × parviflorum',cells:['D5']},
+    {name:'Cyclamen coum ‘Silver Leaf Alba’',cells:['D4']},
+    {name:'Cyclamen coum ‘Christmas Tree Leaf Alba’',cells:['C2']},
+    {name:'Asplenium trichomanes',cells:['C3']}
+  ];
+  // Fact owns the confirmed placement; purge obsolete plan duplicates, including historic B13.
+  for(const item of updates){
+    for(const [cell,name] of Object.entries(state.plan)){
+      if(name===item.name || (item.name==='Cypripedium kentuckiense × parviflorum' && name==='Kentucky')){
+        delete state.plan[cell];state.locked=state.locked.filter(x=>x!==cell);
+      }
+    }
+    state.planted[item.name]=Math.max(Number(state.planted[item.name])||0,1);
+  }
+  try{localStorage.setItem('sad-planner-v9',JSON.stringify(state));localStorage.setItem(migrationKey,'done')}catch(e){console.warn('Planting reconciliation not persisted',e)}
+})();
 const $=s=>document.querySelector(s),svg=$('#map'),ns='http://www.w3.org/2000/svg',cells=[],nodes=new Map();
 function node(tag,attrs={},txt){let e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(txt!==undefined)e.textContent=txt;return e}
 // SVG labels: wrap the full cultivar name into up to four readable lines inside the cell.
